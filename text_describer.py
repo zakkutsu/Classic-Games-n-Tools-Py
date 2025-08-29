@@ -5,7 +5,7 @@ import textwrap # Library untuk memotong teks jika terlalu panjang
 # --- KONFIGURASI PENTING ---
 # GANTI TULISAN "YOUR_API_KEY_HERE" DENGAN KUNCI API YANG SUDAH ANDA SALIN.
 # Pastikan Anda mendapatkan kunci API dari Google AI Studio.
-API_KEY = "" 
+API_KEY = "API_KEY_GEMINI_ANDA" 
 
 # Batas maksimal karakter yang diizinkan
 MAX_CHARS = 100000

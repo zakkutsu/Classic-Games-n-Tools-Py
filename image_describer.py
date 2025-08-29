@@ -5,7 +5,7 @@ import os
 
 # --- KONFIGURASI PENTING ---
 # Ganti tulisan "YOUR_API_KEY_HERE" dengan kunci API yang sudah Anda salin.
-API_KEY = "" # GANTI DENGAN KUNCI API BARU ANDA
+API_KEY = "API_KEY_GEMINI_ANDA" # GANTI DENGAN KUNCI API BARU ANDA
 
 # Konfigurasi model AI Google
 try:
