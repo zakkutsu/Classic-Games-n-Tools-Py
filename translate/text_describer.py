@@ -100,7 +100,7 @@ while True:
             continue
             
         # Tampilkan status "memproses" dan reset penghitung output
-        window['-OUTPUT-'].update("Sabar yaa anak ngentot...")
+        window['-OUTPUT-'].update("Loading...")
         window['-OUTPUT_CHAR_COUNT-'].update("Jumlah Karakter Hasil: 0") # Reset penghitung
         window.refresh() # Paksa jendela untuk update tampilan
         

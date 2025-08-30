@@ -74,6 +74,15 @@ Pengguna mengklik tombol "Cari Gambar" dan memilih foto seekor kucing yang sedan
 
 Ikuti langkah-langkah berikut untuk menginstal dependensi yang diperlukan dan menjalankan kedua aplikasi.
 
+### **0. Buka Folder dari file yang akan dijalankan**
+
+Buka folder tempat Anda menyimpan file `text_describer.py` dan `image_describer.py`.
+
+  * **Navigasi ke Folder:**
+    ```bash
+    cd belajar-python/translate
+    ```
+
 ### **1. Instalasi Library**
 
 Buka Command Prompt atau Terminal dan jalankan perintah berikut satu per satu:
@@ -113,17 +122,17 @@ Buka Command Prompt atau Terminal dan jalankan perintah berikut satu per satu:
   * **Install library PySimpleGUI:**
 
     ```bash
-    pip install PySimpleGUI
+    python -m pip install --upgrade --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
     ```
 
     *(Ini digunakan untuk membuat jendela aplikasi yang simpel dengan tombol dan teks).*
 
-  * **Jika tidak berhasil, gunakan perintah berikut:**
+  * **Jika salah install, gunakan perintah berikut:**
     ```bash
     python -m pip install --force-reinstall --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
     ```
 
-     *(Ini digunakan jika instalasi sebelumnya gagal).*
+     *(Ini digunakan jika instalasi sebelumnya salah).*
 
 ### **2. Ganti Kunci API**
 
