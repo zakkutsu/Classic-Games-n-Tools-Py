@@ -1,6 +1,7 @@
 import pygame
 import random
-import math # --- BARU --- Kita butuh modul math untuk kalkulasi sudut
+import math 
+
 
 # Inisialisasi Pygame
 pygame.init()
@@ -9,6 +10,8 @@ pygame.init()
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 670
 BLOCK_SIZE = 20
+INITIAL_FPS = 8 
+FPS_INCREASE_MILESTONE = 20 
 
 # Warna (R, G, B)
 BLACK = (0, 0, 0)
@@ -28,7 +31,6 @@ font = pygame.font.Font(None, 36)
 button_font = pygame.font.Font(None, 40)
 
 # --- Layout Peta (Maze) ---
-# (Tidak ada perubahan di sini, jadi saya singkat untuk keringkasan)
 maze_map = [
     "##############################",
     "#............##............#",
@@ -134,17 +136,36 @@ class Player:
         elif self.direction == 'DOWN':
             start_angle = math.radians(270) + angle_rad
             end_angle = math.radians(270) - angle_rad
-        else: # Default jika terjadi kondisi aneh
+        else: # Default
             start_angle = angle_rad
             end_angle = math.radians(360) - angle_rad
 
         # Buat daftar titik untuk polygon Pac-Man
         points = [(center_x, center_y)]
-        # Buat titik-titik di sepanjang busur lingkaran
-        for n in range(int(math.degrees(start_angle)), int(math.degrees(end_angle))):
-             x = center_x + self.radius * math.cos(math.radians(n))
-             y = center_y + self.radius * math.sin(math.radians(n))
-             points.append((x, y))
+        
+        # --- BAGIAN YANG DIPERBAIKI ---
+        # Konversi sudut ke derajat untuk loop
+        start_deg = int(math.degrees(start_angle))
+        end_deg = int(math.degrees(end_angle))
+
+        # Logika loop baru untuk menangani sudut yang melewati 360 derajat
+        if start_deg > end_deg:
+            # Iterasi dari sudut awal hingga 360
+            for n in range(start_deg, 360):
+                x = center_x + self.radius * math.cos(math.radians(n))
+                y = center_y + self.radius * math.sin(math.radians(n))
+                points.append((x, y))
+            # Lanjutkan dari 0 hingga sudut akhir
+            for n in range(0, end_deg):
+                x = center_x + self.radius * math.cos(math.radians(n))
+                y = center_y + self.radius * math.sin(math.radians(n))
+                points.append((x, y))
+        else:
+            # Loop normal jika tidak melewati 360
+            for n in range(start_deg, end_deg):
+                x = center_x + self.radius * math.cos(math.radians(n))
+                y = center_y + self.radius * math.sin(math.radians(n))
+                points.append((x, y))
 
         # Gambar Pac-Man sebagai polygon
         pygame.draw.polygon(surface, YELLOW, points)
@@ -239,6 +260,8 @@ def main():
     score = 0
     game_over = False
     win = False
+    fps = INITIAL_FPS
+    pellets_eaten_for_speedup = 0
     button_rect = pygame.Rect(SCREEN_WIDTH//2 - 100, SCREEN_HEIGHT//2 + 40, 200, 50)
     running = True
     while running:
@@ -250,6 +273,8 @@ def main():
                     pellets = list(original_pellets)
                     player.reset()
                     for ghost in ghosts: ghost.reset()
+                    fps = INITIAL_FPS
+                    pellets_eaten_for_speedup = 0
             if event.type == pygame.KEYDOWN and not game_over and not win:
                 if event.key == pygame.K_UP: player.set_direction('UP')
                 elif event.key == pygame.K_DOWN: player.set_direction('DOWN')
@@ -260,19 +285,31 @@ def main():
             player.move(maze_map)
             player.update_animation() # --- BARU --- Panggil update animasi di setiap frame
             for ghost in ghosts: ghost.move(maze_map, (player.x, player.y))
-            if (player.x, player.y) in pellets:
-                pellets.remove((player.x, player.y))
+            player_pos = (player.x, player.y)
+            if player_pos in pellets:
+                pellets.remove(player_pos)
                 score += 10
+                pellets_eaten_for_speedup += 1
+
+                # Cek apakah sudah waktunya mempercepat game
+                if pellets_eaten_for_speedup > 0 and pellets_eaten_for_speedup % FPS_INCREASE_MILESTONE == 0:
+                    fps += 2 # Naikkan FPS sebesar 2
+                    print(f"KECEPATAN NAIK! FPS sekarang: {fps}") # Pesan di terminal (opsional)
+
             for ghost in ghosts:
-                if player.x == ghost.x and player.y == ghost.y: game_over = True
-            if not pellets: win = True
-        
+                if player.x == ghost.x and player.y == ghost.y:
+                    game_over = True
+            if not pellets:
+                win = True
         screen.fill(BLACK)
         draw_maze(screen, maze_map)
         draw_pellets(screen, pellets)
         player.draw(screen)
         for ghost in ghosts: ghost.draw(screen)
         draw_text(screen, f"SKOR: {score}", (10, SCREEN_HEIGHT - 50))
+        # --- BARU --- Menampilkan FPS saat ini di layar
+        draw_text(screen, f"FPS: {fps}", (SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50))
+        
         if game_over:
             draw_text(screen, "GAME OVER!", (SCREEN_WIDTH//2 - 100, SCREEN_HEIGHT//2 - 20), RED)
             pygame.draw.rect(screen, GREEN, button_rect, border_radius=10)
@@ -283,7 +320,10 @@ def main():
             draw_text(screen, "Main Lagi?", (button_rect.centerx - 70, button_rect.centery - 18), WHITE, button_font)
 
         pygame.display.flip()
-        clock.tick(10)
+        
+        # --- DIMODIFIKASI --- Menggunakan variabel fps untuk mengatur kecepatan
+        clock.tick(fps)
+
     pygame.quit()
 
 if __name__ == "__main__":

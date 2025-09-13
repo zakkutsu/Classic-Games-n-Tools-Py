@@ -70,94 +70,60 @@ Pengguna mengklik tombol "Cari Gambar" dan memilih foto seekor kucing yang sedan
 
 -----
 
-## ⚙️ **Cara Instalasi dan Menjalankan**
-
+## ⚙️ Cara Instalasi dan Menjalankan
 Ikuti langkah-langkah berikut untuk menginstal dependensi yang diperlukan dan menjalankan kedua aplikasi.
 
-### **0. Buka Folder dari file yang akan dijalankan**
+**1. Navigasi ke Folder Proyek**
+Buka command prompt atau terminal Anda dan arahkan ke folder tempat Anda menyimpan file proyek.
 
-Buka folder tempat Anda menyimpan file `text_describer.py` dan `image_describer.py`.
-
-  * **Navigasi ke Folder:**
-    ```bash
-    cd belajar-python/translate
-    ```
-
-### **1. Instalasi Library**
-
-Buka Command Prompt atau Terminal dan jalankan perintah berikut satu per satu:
-
-  * **Install Virtual Environment:**
-  
-    ```bash
-    python -m venv venv
-    ```
-
-    *(Ini adalah langkah pertama untuk menginstall virtual environment).*
-
-  * **Buka Virtual Environment:**
-
-    ```bash
-    source venv/Scripts/activate
-    ```
-
-    *(Ini adalah langkah untuk menggunakan virtual environment).*
-
-  * **Install library Google Generative AI:**
-
-    ```bash
-    pip install google-generativeai
-    ```
-
-    *(Ini adalah library resmi untuk berkomunikasi dengan AI Google).*
-
-  * **Install library Pillow:**
-
-    ```bash
-    pip install Pillow
-    ```
-
-    *(Ini digunakan untuk membuka dan memanipulasi file gambar untuk `image_describer.py`).*
-
-  * **Install library PySimpleGUI:**
-
-    ```bash
-    python -m pip install --upgrade --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
-    ```
-
-    *(Ini digunakan untuk membuat jendela aplikasi yang simpel dengan tombol dan teks).*
-
-  * **Jika salah install, gunakan perintah berikut:**
-    ```bash
-    python -m pip install --force-reinstall --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
-    ```
-
-     *(Ini digunakan jika instalasi sebelumnya salah).*
-
-### **2. Ganti Kunci API**
-
-Dapatkan kunci API Anda dari **Google AI Studio**. Setelah itu, buka kedua file (`text_describer.py` dan `image_describer.py`) dan cari baris berikut:
-
-```python
-API_KEY = "ENTER YOUR API KEY HERE" # Ganti dengan kunci Anda
+```Bash
+# Contoh: cd path/to/your/project-folder/translate
 ```
 
-Ganti nilai string di dalam tanda kutip dengan kunci API yang sudah Anda miliki.
+**2. Buat dan Aktifkan Virtual Environment (Sangat Disarankan)**
+Ini akan mengisolasi dependensi proyek Anda.
 
-### **3. Jalankan Aplikasi**
+*Buat environment:*
+```Bash
+python -m venv venv
+```
 
-Buka Command Prompt atau Terminal, lalu navigasikan ke folder tempat Anda menyimpan file-file ini menggunakan perintah `cd`.
+*Aktifkan environment:*
 
-  * **Untuk menjalankan penerjemah teks:**
+- Windows:
+```Bash
+venv\Scripts\activate
+```
+- macOS/Linux:
+```Bash
+source venv/bin/activate
+```
 
-    ```bash
-    python text_describer.py
-    ```
+**3. Instal Semua Dependensi**
+Gunakan file `requirements.txt` untuk menginstal semua library yang dibutuhkan dengan satu perintah mudah. Pastikan file `requirements.txt` ada di folder yang sama.
 
-  * **Untuk menjalankan pendeskripsi gambar:**
+```Bash
+pip install -r requirements.txt
+```
 
-    ```bash
-    python image_describer.py
-    ```
+**4. Tambahkan Kunci API Anda**
+Dapatkan kunci API Anda dari **Google AI Studio**. Buka kedua file Python (`text_describer.py` dan `image_describer.py`) dan cari baris ini:
 
+```Python
+API_KEY = "API_KEY_GEMINI_ANDA"
+```
+Ganti `"API_KEY_GEMINI_ANDA"` dengan kunci API Anda yang sebenarnya.
+
+**5. Jalankan Aplikasi**
+Dari terminal Anda (dengan virtual environment yang masih aktif), jalankan skrip yang diinginkan:
+
+- Untuk menjalankan penerjemah teks:
+```Bash
+python text_describer.py
+```
+
+- Untuk menjalankan pendeskripsi gambar:
+```Bash
+python image_describer.py
+```
 Sebuah jendela aplikasi akan muncul sesuai dengan skrip yang Anda jalankan.
