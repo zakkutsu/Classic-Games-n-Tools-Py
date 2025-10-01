@@ -16,24 +16,52 @@ except Exception as e:
     API_CONFIGURED_SUCCESSFULLY = False
     API_ERROR_MESSAGE = f"Error Konfigurasi API: {e}\n\nPastikan API Key Anda sudah benar dan koneksi internet aktif."
 
-def translate_text(text_to_translate):
-    """Mengirim teks ke AI dan mendapatkan terjemahan ke Bahasa Indonesia."""
-    if not text_to_translate.strip():
+def translate_text(text_to_translate, source_lang: str = "auto", target_lang: str = "id"):
+    """Translate text between supported languages.
+
+    source_lang/target_lang: 'id' (Indonesian), 'en' (English), 'jp' (Japanese), or 'auto' for automatic detection (only for source_lang).
+    Returns translated text or an error message string.
+    """
+    if not text_to_translate or not text_to_translate.strip():
         return "Error: Tidak ada teks untuk diterjemahkan."
-    
+
     if len(text_to_translate) > MAX_CHARS:
         return f"Error: Teks melebihi batas maksimal {MAX_CHARS} karakter."
-    
+
+    lang_names = {
+        "id": "Indonesian",
+        "en": "English",
+        "jp": "Japanese",
+        "auto": "the original language (detect automatically)"
+    }
+
+    if source_lang == target_lang:
+        # Nothing to do
+        return text_to_translate
+
+    src_name = lang_names.get(source_lang, source_lang)
+    tgt_name = lang_names.get(target_lang, target_lang)
+
     try:
-        prompt = f"""
-        Translate the following text into clear and natural-sounding Indonesian.
-        Provide only the translated text as the result, without any additional comments, explanations, or introductions.
-        
-        --- TEXT TO TRANSLATE ---
-        {text_to_translate}
-        --- END OF TEXT ---
-        """
-        
+        if source_lang == "auto":
+            prompt = f"""
+            Detect the language of the following text and translate it into {tgt_name}.
+            Provide only the translated text as the result, without any additional comments, explanations, or introductions.
+
+            --- TEXT TO TRANSLATE ---
+            {text_to_translate}
+            --- END OF TEXT ---
+            """
+        else:
+            prompt = f"""
+            Translate the following text from {src_name} to {tgt_name}.
+            Provide only the translated text as the result, without any additional comments, explanations, or introductions.
+
+            --- TEXT TO TRANSLATE ---
+            {text_to_translate}
+            --- END OF TEXT ---
+            """
+
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
@@ -73,7 +101,7 @@ def main(page: ft.Page):
         max_lines=10,
         border_color=ft.Colors.BLUE_400,
         text_size=14,
-        helper_text="Mendukung semua bahasa → Bahasa Indonesia"
+        helper_text="Mendukung bahasa: id, en, jp (pilih sumber & target)"
     )
     
     # Character counter
@@ -136,6 +164,8 @@ def main(page: ft.Page):
     def start_translation(e):
         """Start translation process."""
         source_text = input_field.value
+        source_lang = source_lang_dropdown.value or "auto"
+        target_lang = target_lang_dropdown.value or "id"
         
         if not source_text or not source_text.strip():
             page.snack_bar = ft.SnackBar(ft.Text("⚠️ Teks input tidak boleh kosong!"))
@@ -148,26 +178,26 @@ def main(page: ft.Page):
         translate_button.disabled = True
         output_field.value = ""
         page.update()
-        
         # Translate
-        translation_result = translate_text(source_text)
-        
+        translation_result = translate_text(source_text, source_lang=source_lang, target_lang=target_lang)
+
         # Hide loading
         progress_ring.visible = False
         translate_button.disabled = False
-        
+
         # Show result
         output_field.value = translation_result
         result_length = len(translation_result)
-        
+
         if translation_result.startswith("Error:") or translation_result.startswith("Terjadi"):
             output_char_count.color = ft.Colors.RED_400
             output_char_count.value = "❌ Terjadi kesalahan"
         else:
             output_char_count.color = ft.Colors.GREEN_400
             output_char_count.value = f"Jumlah karakter hasil: {result_length:,}"
-            
+
         page.update()
+        return
     
     def clear_all(e):
         """Clear all fields."""
@@ -184,10 +214,36 @@ def main(page: ft.Page):
     input_field.on_change = update_input_count
     translate_button.on_click = start_translation
     clear_button.on_click = clear_all
+
+    # Language selection dropdowns
+    lang_options = [
+        ft.dropdown.Option("auto", text="Auto Detect"),
+        ft.dropdown.Option("id", text="Indonesian (id)"),
+        ft.dropdown.Option("en", text="English (en)"),
+        ft.dropdown.Option("jp", text="Japanese (jp)")
+    ]
+
+    source_lang_dropdown = ft.Dropdown(
+        label="Dari (source)",
+        width=220,
+        options=lang_options,
+        value="auto",
+        helper_text="Pilih bahasa sumber atau Auto Detect"
+    )
+
+    target_lang_dropdown = ft.Dropdown(
+        label="Ke (target)",
+        width=220,
+        options=[opt for opt in lang_options if opt.key != "auto"],
+        value="id",
+        helper_text="Pilih bahasa target"
+    )
     
     # Add components to page
     page.add(
         header,
+        ft.Divider(),
+        ft.Row([source_lang_dropdown, ft.Container(width=20), target_lang_dropdown]),
         ft.Divider(),
         input_field,
         input_char_count,
