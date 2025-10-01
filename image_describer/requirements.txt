@@ -1,3 +1,4 @@
 google-generativeai
 Pillow
-pysimplegui
+--extra-index-url https://PySimpleGUI.net/install
+PySimpleGUI

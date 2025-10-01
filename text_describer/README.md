@@ -58,6 +58,12 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
+**Atau instal manual jika ada masalah:**
+```bash
+pip install google-generativeai Pillow
+pip install --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
+```
+
 ### 5. Setup API Key
 1. Buka [Google AI Studio](https://aistudio.google.com/)
 2. Daftar/login dan dapatkan API Key gratis
@@ -71,6 +77,35 @@ API_KEY = "API_KEY_GEMINI_ANDA"  # Ganti dengan API key Anda
 ```bash
 python text_describer.py
 ```
+
+### 7. Berpindah ke Tool/Folder Lain
+<sub><i>💡 Panduan untuk pengguna pemula</i></sub>
+
+Setelah selesai menggunakan aplikasi, Anda bisa berpindah ke tool lain:
+
+**Keluar dari virtual environment:**
+```bash
+deactivate
+```
+
+**Kembali ke folder utama:**
+```bash
+cd ..
+```
+
+**Pindah ke tool lain, contoh:**
+```bash
+# Untuk game Tic-Tac-Toe
+cd tictactoe
+
+# Untuk game Pac-Man
+cd pacman
+
+# Untuk Image Describer (AI)
+cd image_describer
+```
+
+<sub><i>🔄 Ulangi langkah 3-6 untuk menjalankan tool yang baru</i></sub>
 
 ## 📋 Dependencies
 

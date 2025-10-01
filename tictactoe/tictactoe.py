@@ -42,7 +42,8 @@ board = [[None for _ in range(BOARD_COLS)] for _ in range(BOARD_ROWS)]
 player = 1  # 1-X, 2-O
 game_over = False
 winner = None
-game_mode = 'menu'  # menu, pvp, pve_easy, pve_hard
+game_mode = 'menu'  # menu, pvp, pve_easy, pve_hard, player_order
+player_goes_first = True  # True jika player main duluan, False jika AI duluan
 
 def draw_lines():
     """Menggambar garis papan permainan."""
@@ -93,9 +94,9 @@ def check_draw():
 
 def restart_game():
     """Mereset permainan ke kondisi awal."""
-    global board, player, game_over, winner
+    global board, player, game_over, winner, player_goes_first
     board = [[None for _ in range(BOARD_COLS)] for _ in range(BOARD_ROWS)]
-    player = 1
+    player = 1 if player_goes_first else 2
     game_over = False
     winner = None
 
@@ -135,9 +136,32 @@ def show_menu():
     title_text = font.render("Tic Tac Toe", True, TEXT_COLOR)
     screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 100))
 
-    draw_button("Player vs Player", 150, 220, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, lambda: set_game_mode('pvp'), medium_font)
-    draw_button("Player vs AI (Mudah)", 150, 290, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, lambda: set_game_mode('pve_easy'), medium_font)
-    draw_button("Player vs AI (Sulit)", 150, 360, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, lambda: set_game_mode('pve_hard'), medium_font)
+    draw_button("Player vs Player", 150, 200, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, lambda: set_game_mode('pvp'), medium_font)
+    draw_button("Player vs AI (Mudah)", 150, 260, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, lambda: set_game_mode('player_order_easy'), medium_font)
+    draw_button("Player vs AI (Sulit)", 150, 320, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, lambda: set_game_mode('player_order_hard'), medium_font)
+
+def show_player_order_menu():
+    """Menampilkan menu pemilihan urutan pemain."""
+    screen.fill(BG_COLOR)
+    title_text = font.render("Pilih Urutan Bermain", True, TEXT_COLOR)
+    screen.blit(title_text, (SCREEN_WIDTH // 2 - title_text.get_width() // 2, 100))
+    
+    # Simpan mode AI yang dipilih dalam variabel global sementara
+    ai_mode = 'pve_easy' if 'easy' in game_mode else 'pve_hard'
+    
+    draw_button("Saya Main Duluan (X)", 150, 220, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, 
+                lambda: start_ai_game(ai_mode, True), medium_font)
+    draw_button("AI Main Duluan (O)", 150, 290, 300, 50, BUTTON_HOVER_COLOR, BUTTON_COLOR, 
+                lambda: start_ai_game(ai_mode, False), medium_font)
+    draw_button("Kembali", 220, 360, 160, 40, BUTTON_HOVER_COLOR, BUTTON_COLOR, 
+                lambda: set_game_mode('menu'), small_font)
+
+def start_ai_game(ai_mode, player_first):
+    """Memulai game AI dengan urutan yang dipilih."""
+    global player_goes_first, player
+    player_goes_first = player_first
+    player = 1 if player_first else 2  # Set player sesuai urutan
+    set_game_mode(ai_mode)
 
 def draw_turn_indicator():
     """Menampilkan giliran siapa di bawah papan."""
@@ -228,8 +252,11 @@ while True:
                 clicked_col = int(mouseX // SQUARE_SIZE)
 
                 if clicked_row < 3: # Memastikan klik di dalam papan
-                    # Giliran Pemain
-                    if (game_mode == 'pvp' or (game_mode in ['pve_easy', 'pve_hard'] and player == 1)):
+                    # Giliran Pemain - cek apakah ini giliran player yang benar
+                    human_player = 1 if player_goes_first else 2
+                    ai_player = 2 if player_goes_first else 1
+                    
+                    if (game_mode == 'pvp' or (game_mode in ['pve_easy', 'pve_hard'] and player == human_player)):
                         if mark_square(clicked_row, clicked_col, player):
                             if check_win(player):
                                 winner = player
@@ -237,30 +264,37 @@ while True:
                             elif check_draw():
                                 game_over = True
                             else:
-                                player = 2 if player == 1 else 1
+                                player = ai_player if game_mode in ['pve_easy', 'pve_hard'] else (2 if player == 1 else 1)
 
     # --- Bagian Render ---
     if game_mode == 'menu':
         show_menu()
+    elif 'player_order' in game_mode:
+        show_player_order_menu()
     else:
         screen.fill(BG_COLOR)
         draw_lines()
         draw_figures()
         draw_turn_indicator() # Tampilkan giliran di bawah
 
-        # Giliran AI (setelah giliran pemain selesai)
-        if not game_over and game_mode in ['pve_easy', 'pve_hard'] and player == 2:
-            pygame.time.wait(400) # Jeda agar AI tidak instan
-            move = ai_easy() if game_mode == 'pve_easy' else ai_hard()
-            if move:
-                mark_square(move[0], move[1], player)
-                if check_win(player):
-                    winner = player
-                    game_over = True
-                elif check_draw():
-                    game_over = True
-                else:
-                    player = 1
+        # Giliran AI (setelah giliran pemain selesai atau di awal jika AI main duluan)
+        if not game_over and game_mode in ['pve_easy', 'pve_hard']:
+            # Cek apakah giliran AI (player 2) atau jika AI main duluan dan masih turn 1
+            is_ai_turn = (player == 2) or (not player_goes_first and sum(row.count(None) for row in board) == 9)
+            
+            if is_ai_turn:
+                pygame.time.wait(400) # Jeda agar AI tidak instan
+                move = ai_easy() if game_mode == 'pve_easy' else ai_hard()
+                if move:
+                    ai_player = 1 if not player_goes_first else 2  # AI adalah O jika main duluan, X jika kedua
+                    mark_square(move[0], move[1], ai_player)
+                    if check_win(ai_player):
+                        winner = ai_player
+                        game_over = True
+                    elif check_draw():
+                        game_over = True
+                    else:
+                        player = 1 if not player_goes_first else 2  # Switch ke player
         
         # --- MENAMPILKAN POPUP JIKA GAME BERAKHIR ---
         if game_over:

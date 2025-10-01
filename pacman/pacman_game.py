@@ -134,15 +134,6 @@ class Player:
         map_x = x // BLOCK_SIZE
         map_y = y // BLOCK_SIZE
         
-        # --- TAMBAHAN UNTUK DEBUGGING ---
-        # Kita akan coba print nilai-nilainya sebelum terjadi error
-        try:
-            print(f"Checking coords: map_y={map_y}, map_x={map_x}. Maze row length: {len(maze[map_y])}")
-        except IndexError:
-            # Ini akan berjalan jika map_y sendiri sudah di luar batas
-            print(f"Checking coords: map_y={map_y} (ROW OUT OF BOUNDS), map_x={map_x}. Total rows: {len(maze)}")
-        # --- AKHIR BAGIAN DEBUGGING ---
-
         # Guard clause dinamis yang seharusnya mencegah error
         if map_y < 0 or map_y >= len(maze) or map_x < 0 or map_x >= len(maze[map_y]):
             return True # Anggap di luar peta sebagai tembok
@@ -224,7 +215,6 @@ def main():
             if current_time - last_speedup_time > SPEED_INCREASE_INTERVAL:
                 fps *= SPEED_INCREASE_FACTOR # Naikkan FPS sebesar 10%
                 last_speedup_time = current_time # Reset timer
-                print(f"KECEPATAN NAIK! FPS sekarang: {fps:.1f}")
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: running = False

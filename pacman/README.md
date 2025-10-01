@@ -62,6 +62,11 @@ source venv/Scripts/activate
 
 ### 4. Instal Dependensi
 ```bash
+pip install -r requirements.txt
+```
+
+**Atau instal manual:**
+```bash
 pip install pygame
 ```
 
@@ -69,6 +74,35 @@ pip install pygame
 ```bash
 python pacman_game.py
 ```
+
+### 6. Berpindah ke Tool/Folder Lain
+<sub><i>💡 Panduan untuk pengguna pemula</i></sub>
+
+Setelah selesai bermain, Anda bisa berpindah ke tool lain:
+
+**Keluar dari virtual environment:**
+```bash
+deactivate
+```
+
+**Kembali ke folder utama:**
+```bash
+cd ..
+```
+
+**Pindah ke tool lain, contoh:**
+```bash
+# Untuk game Tic-Tac-Toe
+cd tictactoe
+
+# Untuk Text Describer (AI)
+cd text_describer
+
+# Untuk Image Describer (AI)
+cd image_describer
+```
+
+<sub><i>🔄 Ulangi langkah 3-5 untuk menjalankan tool yang baru</i></sub>
 
 ## 🎮 Fitur Game
 
