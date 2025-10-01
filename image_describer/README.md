@@ -114,6 +114,44 @@ cd text_describer
 
 <sub><i>🔄 Ulangi langkah 3-6 untuk menjalankan tool yang baru</i></sub>
 
+## 🏷️ Text Tags
+`Python`, `Google Gemini AI`, `Computer Vision`, `Image Recognition`, `PySimpleGUI`, `PIL`, `Machine Learning`, `Artificial Intelligence`, `Visual AI`, `Image Processing`
+
+## 🎬 Demo
+
+### Skenario Penggunaan:
+1. **Application Launch:** User membuka aplikasi dengan interface file browser
+2. **Image Selection:**
+   - User klik "Cari Gambar" → File dialog terbuka
+   - Navigate ke folder Pictures, pilih foto sunset di pantai (beach_sunset.jpg)
+   - File path muncul: "C:\Users\...\Pictures\beach_sunset.jpg"
+3. **Analysis Process:**
+   - User klik "Mulai Deskripsikan"
+   - Status berubah: "Sedang memproses..." dengan progress indicator
+   - Google Gemini Vision API menganalisis gambar (≈3-5 detik)
+4. **Detailed Results:**
+   ```
+   "Ini adalah gambar pemandangan pantai yang menakjubkan saat matahari 
+   terbenam. Langit berwarna orange dan pink yang dramatis memantulkan 
+   cahaya ke permukaan air laut yang tenang. Di latar depan terlihat 
+   siluet pohon kelapa yang melengkung, menciptakan frame alami. 
+   Beberapa awan tipis tersebar di langit, menambah kedalaman visual. 
+   Suasana terlihat sangat damai dan romantis, typical dari golden hour 
+   di daerah tropis."
+   ```
+5. **Multiple Tests:**
+   - **Pet Photo:** "Seekor kucing oren berbulu panjang sedang tidur nyenyak..."
+   - **Food Image:** "Sepiring nasi goreng yang menggugah selera dengan telur mata sapi..."
+   - **Architecture:** "Bangunan modern dengan desain minimalis dan kaca reflektif..."
+
+### Capabilities Showcase:
+- **Object Detection:** Identifies main subjects, backgrounds, and details
+- **Color Analysis:** Recognizes color schemes and lighting conditions
+- **Context Understanding:** Understands scenes, moods, and environments
+- **Cultural Awareness:** Describes with Indonesian cultural context
+- **Technical Details:** Notes photography aspects like composition and lighting
+- **Emotion Recognition:** Captures mood and atmosphere of images
+
 ## 📋 Dependencies
 
 File `requirements.txt` berisi:

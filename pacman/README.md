@@ -110,6 +110,35 @@ cd image_describer
 
 <sub><i>🔄 Ulangi langkah 3-5 untuk menjalankan tool yang baru</i></sub>
 
+## 🏷️ Text Tags
+`Python`, `Pygame`, `Pac-Man`, `Arcade Game`, `Game Development`, `Animation`, `AI Pathfinding`, `Classic Games`, `Retro Gaming`, `Computer Graphics`
+
+## 🎬 Demo
+
+### Skenario Permainan:
+1. **Game Start:** Pemain memulai dengan Pac-Man di posisi awal (tengah bawah maze)
+2. **Initial Movement:** 
+   - Pac-Man bergerak ke kanan dengan animasi mulut membuka-tutup
+   - Hantu merah, pink, dan cyan mulai berpatroli di area masing-masing
+3. **Pellet Collection:**
+   - Pemain navigasi melalui lorong sempit, memakan pellet putih
+   - Setiap pellet memberikan +10 poin, skor bertambah real-time
+   - Ghost AI mulai mendeteksi posisi Pac-Man dan bergerak mendekat
+4. **Chase Sequence:**
+   - Hantu merah aktif mengejar, pemain harus menggunakan sudut maze untuk menghindari
+   - Kecepatan game bertambah 10% setiap 3 detik - gameplay semakin intens
+5. **Near Miss:** Pac-Man hampir tertangkap di lorong sempit, berhasil kabur ke tunnel kiri
+6. **Tunnel Mechanic:** Keluar dari sisi kiri layar, muncul di sisi kanan (wraparound)
+7. **Victory/Defeat:** 
+   - **Win:** Semua pellet habis → "You Win!" dengan skor final
+   - **Lose:** Tertangkap hantu → "Game Over!" dengan opsi restart
+
+### Fitur Teknis:
+- **Smooth Animation:** 60 FPS dengan interpolasi gerakan yang halus
+- **Dynamic Speed:** Progressive difficulty dengan FPS scaling
+- **Collision Detection:** Pixel-perfect detection untuk walls dan ghosts
+- **Audio-Visual Feedback:** Screen flash saat game over, victory celebration
+
 ## 🎮 Fitur Game
 
 ### Animasi Pac-Man

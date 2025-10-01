@@ -92,6 +92,19 @@ Aplikasi untuk menganalisis dan memberikan deskripsi konten gambar menggunakan *
 
 > ➡️ **[Baca dokumentasi lengkap Image Describer](image_describer/README.md)**
 
+## 🏷️ Text Tags
+`Python`, `Pygame`, `Google Gemini AI`, `Computer Vision`, `Text Translation`, `Game Development`, `Artificial Intelligence`, `GUI`, `PySimpleGUI`, `Minimax Algorithm`, `Machine Learning`
+
+## 🎬 Demo Overview
+
+### 🎮 Game Projects
+- **Tic-Tac-Toe:** Interactive menu → Select difficulty → Choose turn order → Strategic gameplay with AI
+- **Pac-Man:** Classic maze navigation → Ghost chase mechanics → Progressive speed increase → Score accumulation
+
+### 🤖 AI Projects  
+- **Text Describer:** Input text → Real-time character counting → AI translation → Indonesian output
+- **Image Describer:** File browser → Image selection → AI analysis → Detailed description generation
+
 ---
 
 ## 🇺🇸 English {#en}
@@ -172,6 +185,19 @@ Application for analyzing and providing image content descriptions using **Googl
 
 > ➡️ **[Read complete Image Describer documentation](image_describer/README.md)**
 
+## 🏷️ Text Tags
+`Python`, `Pygame`, `Google Gemini AI`, `Computer Vision`, `Text Translation`, `Game Development`, `Artificial Intelligence`, `GUI`, `PySimpleGUI`, `Minimax Algorithm`, `Machine Learning`
+
+## 🎬 Demo Overview
+
+### 🎮 Game Projects
+- **Tic-Tac-Toe:** Interactive menu → Select difficulty → Choose turn order → Strategic gameplay with AI
+- **Pac-Man:** Classic maze navigation → Ghost chase mechanics → Progressive speed increase → Score accumulation
+
+### 🤖 AI Projects  
+- **Text Describer:** Input text → Real-time character counting → AI translation → Indonesian output
+- **Image Describer:** File browser → Image selection → AI analysis → Detailed description generation
+
 ---
 
 ## 🇯🇵 日本語 {#jp}
@@ -251,5 +277,18 @@ Application for analyzing and providing image content descriptions using **Googl
 - 使いやすいファイルブラウザ
 
 > ➡️ **[画像記述者の完全なドキュメントを読む](image_describer/README.md)**
+
+## 🏷️ テキストタグ
+`Python`, `Pygame`, `Google Gemini AI`, `コンピュータービジョン`, `テキスト翻訳`, `ゲーム開発`, `人工知能`, `GUI`, `PySimpleGUI`, `Minimaxアルゴリズム`, `機械学習`
+
+## 🎬 デモ概要
+
+### 🎮 ゲームプロジェクト
+- **三目並べ:** インタラクティブメニュー → 難易度選択 → ターン順序選択 → AIとの戦略ゲームプレイ
+- **パックマン:** クラシック迷路ナビゲーション → ゴーストチェイスメカニクス → 漸進的スピード増加 → スコア蓄積
+
+### 🤖 AIプロジェクト  
+- **テキスト記述者:** テキスト入力 → リアルタイム文字カウント → AI翻訳 → インドネシア語出力
+- **画像記述者:** ファイルブラウザ → 画像選択 → AI分析 → 詳細な説明生成
 
 ---

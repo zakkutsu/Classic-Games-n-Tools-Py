@@ -107,6 +107,29 @@ cd image_describer
 
 <sub><i>🔄 Ulangi langkah 3-5 untuk menjalankan tool yang baru</i></sub>
 
+## 🏷️ Text Tags
+`Python`, `Pygame`, `Tic-Tac-Toe`, `Minimax Algorithm`, `Artificial Intelligence`, `Game Development`, `GUI`, `Strategy Game`, `Computer Science`, `Algorithm Implementation`
+
+## 🎬 Demo
+
+### Skenario Permainan:
+1. **Startup:** Pemain membuka aplikasi dan melihat menu utama dengan 3 opsi mode
+2. **Mode Selection:** Pemain memilih "Player vs AI (Sulit)" untuk tantangan maksimal
+3. **Turn Order:** Aplikasi menampilkan menu pemilihan - pemain memilih "Saya Main Duluan (X)"
+4. **Gameplay:** 
+   - Pemain mengklik kotak tengah (strategi optimal)
+   - AI merespons dalam 400ms dengan gerakan counter-strategy
+   - Pemain mencoba membuat fork (dua peluang menang)
+   - AI memblokir dengan sempurna menggunakan algoritma Minimax
+5. **Endgame:** Setelah 9 gerakan, hasil seri dengan popup elegant "Draw!"
+6. **Reset:** Pemain klik "Menu" untuk kembali atau mencoba mode lain
+
+### Fitur Visual:
+- **Hover Effects:** Tombol berubah warna saat mouse hover
+- **Turn Indicator:** Status giliran ditampilkan di bawah board
+- **Popup Animation:** Winner announcement dengan overlay semi-transparan
+- **Responsive Design:** Interface menyesuaikan dengan interaksi mouse
+
 ## 🤖 Mode AI
 
 ### AI Mudah
@@ -247,6 +270,29 @@ cd image_describer
 
 <sub><i>🔄 Repeat steps 3-5 to run the new tool</i></sub>
 
+## 🏷️ Text Tags
+`Python`, `Pygame`, `Tic-Tac-Toe`, `Minimax Algorithm`, `Artificial Intelligence`, `Game Development`, `GUI`, `Strategy Game`, `Computer Science`, `Algorithm Implementation`
+
+## 🎬 Demo
+
+### Game Scenario:
+1. **Startup:** Player opens application and sees main menu with 3 mode options
+2. **Mode Selection:** Player selects "Player vs AI (Hard)" for maximum challenge
+3. **Turn Order:** Application displays selection menu - player chooses "I Go First (X)"
+4. **Gameplay:** 
+   - Player clicks center square (optimal strategy)
+   - AI responds in 400ms with counter-strategy move
+   - Player attempts to create fork (two winning opportunities)
+   - AI blocks perfectly using Minimax algorithm
+5. **Endgame:** After 9 moves, draw result with elegant "Draw!" popup
+6. **Reset:** Player clicks "Menu" to return or try other modes
+
+### Visual Features:
+- **Hover Effects:** Buttons change color on mouse hover
+- **Turn Indicator:** Turn status displayed below board
+- **Popup Animation:** Winner announcement with semi-transparent overlay
+- **Responsive Design:** Interface adapts to mouse interactions
+
 ---
 
 **Happy playing! 🎉**
@@ -355,6 +401,29 @@ cd image_describer
 ```
 
 <sub><i>🔄 新しいツールを実行するには手順3-5を繰り返してください</i></sub>
+
+## 🏷️ テキストタグ
+`Python`, `Pygame`, `三目並べ`, `Minimaxアルゴリズム`, `人工知能`, `ゲーム開発`, `GUI`, `戦略ゲーム`, `コンピューターサイエンス`, `アルゴリズム実装`
+
+## 🎬 デモ
+
+### ゲームシナリオ:
+1. **起動:** プレイヤーがアプリケーションを開き、3つのモードオプションがあるメインメニューを表示
+2. **モード選択:** 最大の挑戦のため「プレイヤー対AI（難しい）」を選択
+3. **ターン順序:** アプリケーションが選択メニューを表示 - プレイヤーが「私が先手（X）」を選択
+4. **ゲームプレイ:** 
+   - プレイヤーが中央マスをクリック（最適戦略）
+   - AIが400msでカウンター戦略の手で応答
+   - プレイヤーがフォーク（2つの勝利機会）を作ろうと試みる
+   - AIがMinimaxアルゴリズムを使用して完璧にブロック
+5. **エンドゲーム:** 9手後、エレガントな「引き分け！」ポップアップで引き分け結果
+6. **リセット:** プレイヤーが「メニュー」をクリックして戻るか他のモードを試す
+
+### ビジュアル機能:
+- **ホバー効果:** マウスホバー時にボタンの色が変わる
+- **ターン表示:** ボード下部にターン状況を表示
+- **ポップアップアニメーション:** 半透明オーバーレイ付きの勝者発表
+- **レスポンシブデザイン:** マウスインタラクションに適応するインターフェース
 
 ---
 

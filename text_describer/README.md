@@ -113,6 +113,42 @@ cd image_describer
 
 <sub><i>🔄 Ulangi langkah 3-6 untuk menjalankan tool yang baru</i></sub>
 
+## 🏷️ Text Tags
+`Python`, `Google Gemini AI`, `Text Translation`, `Natural Language Processing`, `PySimpleGUI`, `API Integration`, `Machine Learning`, `Artificial Intelligence`, `Language Technology`
+
+## 🎬 Demo
+
+### Skenario Penggunaan:
+1. **Application Launch:** User membuka aplikasi dan melihat interface dengan dua text area
+2. **Text Input:** 
+   - User paste paragraf bahasa Inggris tentang teknologi AI:
+   ```
+   "Artificial Intelligence is revolutionizing the way we work and live. 
+   Machine learning algorithms can now process vast amounts of data 
+   and provide insights that were previously impossible to obtain."
+   ```
+3. **Character Monitoring:** 
+   - Character counter menunjukkan: "247/100,000 characters"
+   - Counter berwarna hijau (dalam batas aman)
+4. **Translation Process:**
+   - User klik tombol "Terjemahkan"
+   - Status berubah menjadi "Sedang menerjemahkan..." dengan loading indicator
+   - Google Gemini API memproses request (≈2-3 detik)
+5. **Result Display:**
+   ```
+   "Kecerdasan Buatan sedang merevolusi cara kita bekerja dan hidup. 
+   Algoritma pembelajaran mesin kini dapat memproses data dalam jumlah 
+   besar dan memberikan wawasan yang sebelumnya tidak mungkin diperoleh."
+   ```
+6. **Quality Check:** User membaca hasil - terjemahan natural, konteks terjaga
+7. **Batch Processing:** User mencoba teks bahasa Jepang, Spanyol - semuanya berhasil
+
+### Fitur Interaktif:
+- **Real-time Validation:** Input kosong → error message "Tidak ada teks untuk diterjemahkan"
+- **Limit Protection:** >100k karakter → warning merah dengan pesan batas
+- **Error Handling:** Koneksi gagal → popup informatif dengan solusi troubleshooting
+- **Multi-language Support:** Deteksi otomatis bahasa sumber, output konsisten Indonesian
+
 ## 📋 Dependencies
 
 File `requirements.txt` berisi:
