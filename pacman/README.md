@@ -1,10 +1,10 @@
 # 🟡 Pac-Man Klasik
 
-**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#id) | [🇺🇸 English](#en) | [🇯🇵 日本語](#jp)
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 
-## 🇮🇩 Bahasa Indonesia {#id}
+## 🇮🇩 Bahasa Indonesia
 
 Selamat datang di implementasi **Pac-Man** klasik! Game arcade legendaris ini telah dibangun ulang menggunakan Python dan Pygame dengan fitur-fitur modern yang menarik.
 
@@ -194,7 +194,7 @@ Game ini menggunakan:
 
 ---
 
-## 🇺🇸 English {#en}
+## 🇺🇸 English
 
 Welcome to the classic **Pac-Man** implementation! This legendary arcade game has been rebuilt using Python and Pygame with exciting modern features.
 
@@ -306,7 +306,7 @@ cd image_describer
 
 ---
 
-## 🇯🇵 日本語 {#jp}
+## 🇯🇵 日本語
 
 クラシック**パックマン**の実装へようこそ！この伝説的なアーケードゲームは、エキサイティングなモダン機能でPythonとPygameを使用して再構築されました。
 

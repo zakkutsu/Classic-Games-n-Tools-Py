@@ -1,10 +1,10 @@
 # ❌⭕ Tic-Tac-Toe Pro
 
-**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#id) | [🇺🇸 English](#en) | [🇯🇵 日本語](#jp)
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 
-## 🇮🇩 Bahasa Indonesia {#id}
+## 🇮🇩 Bahasa Indonesia
 
 Selamat datang di **Tic-Tac-Toe Pro**! Ini adalah implementasi modern dari game klasik Tic-Tac-Toe dengan antarmuka grafis yang menarik dan AI yang cerdas menggunakan algoritma Minimax.
 
@@ -167,7 +167,7 @@ Proyek ini dibuat untuk tujuan edukasi dan hiburan. Silakan digunakan dan dimodi
 
 ---
 
-## 🇺🇸 English {#en}
+## 🇺🇸 English
 
 Welcome to **Tic-Tac-Toe Pro**! This is a modern implementation of the classic Tic-Tac-Toe game with an attractive graphical interface and smart AI using the Minimax algorithm.
 
@@ -299,7 +299,7 @@ cd image_describer
 
 ---
 
-## 🇯🇵 日本語 {#jp}
+## 🇯🇵 日本語
 
 **三目並べプロ**へようこそ！これは、魅力的なグラフィカルインターフェースとMinimaxアルゴリズムを使用したスマートAIを備えたクラシック三目並べゲームのモダンな実装です。
 

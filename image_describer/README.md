@@ -1,10 +1,10 @@
 # 🖼️ Image Describer - Deskripsi Gambar AI
 
-**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#id) | [🇺🇸 English](#en) | [🇯🇵 日本語](#jp)
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 
-## 🇮🇩 Bahasa Indonesia {#id}
+## 🇮🇩 Bahasa Indonesia
 
 Selamat datang di **Image Describer**! Aplikasi yang menggunakan kekuatan **Google Generative AI (Gemini)** untuk menganalisis dan memberikan deskripsi konten gambar dalam Bahasa Indonesia yang jelas dan detail.
 
@@ -252,7 +252,7 @@ Proyek ini dibuat untuk tujuan edukasi dan pengembangan. Silakan gunakan dan mod
 
 ---
 
-## 🇺🇸 English {#en}
+## 🇺🇸 English
 
 Welcome to **Image Describer**! An application that uses the power of **Google Generative AI (Gemini)** to analyze and provide image content descriptions in clear and detailed Indonesian.
 
@@ -368,7 +368,7 @@ cd text_describer
 
 ---
 
-## 🇯🇵 日本語 {#jp}
+## 🇯🇵 日本語
 
 **画像記述者**へようこそ！**Google Generative AI (Gemini)**の力を使用して画像コンテンツを分析し、明確で詳細なインドネシア語での説明を提供するアプリケーションです。
 

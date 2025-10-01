@@ -1,10 +1,10 @@
 # 🤖 Text Describer - Penerjemah Teks AI
 
-**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#id) | [🇺🇸 English](#en) | [🇯🇵 日本語](#jp)
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 
-## 🇮🇩 Bahasa Indonesia {#id}
+## 🇮🇩 Bahasa Indonesia
 
 Selamat datang di **Text Describer**! Aplikasi penerjemah teks yang menggunakan kekuatan **Google Generative AI (Gemini)** untuk menerjemahkan teks dari bahasa apa pun ke Bahasa Indonesia dengan hasil yang natural dan akurat.
 
@@ -223,7 +223,7 @@ Proyek ini dibuat untuk tujuan edukasi dan pengembangan. Silakan gunakan dan mod
 
 ---
 
-## 🇺🇸 English {#en}
+## 🇺🇸 English
 
 Welcome to **Text Describer**! A text translation application that uses the power of **Google Generative AI (Gemini)** to translate text from any language to Indonesian with natural and accurate results.
 
@@ -338,7 +338,7 @@ cd image_describer
 
 ---
 
-## 🇯🇵 日本語 {#jp}
+## 🇯🇵 日本語
 
 **テキスト記述者**へようこそ！**Google Generative AI (Gemini)**の力を使用して、あらゆる言語からインドネシア語への自然で正確な翻訳を行うテキスト翻訳アプリケーションです。
 

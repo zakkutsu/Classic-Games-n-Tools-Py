@@ -1,10 +1,10 @@
 # 🚀 Koleksi Proyek Python 🚀
 
-**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#id) | [🇺🇸 English](#en) | [🇯🇵 日本語](#jp)
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 
-## 🇮🇩 Bahasa Indonesia {#id}
+## 🇮🇩 Bahasa Indonesia
 
 Selamat datang di repositori koleksi proyek Python saya! 🐍 Repositori ini berfungsi sebagai portofolio pribadi yang berisi beberapa aplikasi dan game yang dikembangkan untuk tujuan bersenang-senang.
 
@@ -107,7 +107,7 @@ Aplikasi untuk menganalisis dan memberikan deskripsi konten gambar menggunakan *
 
 ---
 
-## 🇺🇸 English {#en}
+## 🇺🇸 English
 
 Welcome to my Python project collection repository! 🐍 This repository serves as a personal portfolio containing various applications and games developed for fun and learning.
 
@@ -200,7 +200,7 @@ Application for analyzing and providing image content descriptions using **Googl
 
 ---
 
-## 🇯🇵 日本語 {#jp}
+## 🇯🇵 日本語
 
 私のPythonプロジェクトコレクションリポジトリへようこそ！🐍 このリポジトリは、楽しみと学習のために開発された様々なアプリケーションとゲームを含む個人的なポートフォリオとして機能します。
 
