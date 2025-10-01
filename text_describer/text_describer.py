@@ -88,7 +88,7 @@ def main(page: ft.Page):
     # Translate button
     translate_button = ft.ElevatedButton(
         text="🚀 Terjemahkan",
-        icon=ft.icons.TRANSLATE,
+        icon=ft.Icons.TRANSLATE,
         width=200,
         height=45,
         style=ft.ButtonStyle(
@@ -115,7 +115,7 @@ def main(page: ft.Page):
     # Clear button
     clear_button = ft.OutlinedButton(
         text="🗑️ Bersihkan",
-        icon=ft.icons.CLEAR_ALL,
+        icon=ft.Icons.CLEAR_ALL,
         width=150,
         height=35
     )
