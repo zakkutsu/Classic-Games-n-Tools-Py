@@ -2,7 +2,7 @@
 
 Selamat datang di repositori koleksi proyek Python saya! 🐍 Repositori ini berfungsi sebagai portofolio pribadi yang berisi beberapa aplikasi dan game yang dikembangkan untuk tujuan bersenang-senang.
 
-Setiap proyek dikelompokkan ke dalam sub-folder untuk navigasi yang mudah.
+Setiap proyek dikelompokkan ke dalam folder terpisah untuk navigasi yang mudah dan organisasi yang lebih baik.
 
 ---
 
@@ -12,40 +12,78 @@ Struktur folder di repositori ini diatur sebagai berikut untuk memisahkan setiap
 
 ```
 .
-├── 🎮 game/
-│   ├── pacman_game.py
+├── 🎮 tictactoe/
 │   ├── tictactoe.py
-│   ├── README.md
-│   └── requirements.txt
-├── 🤖 translate/
-│   ├── image_describer.py
+│   └── README.md
+├── 🟡 pacman/
+│   ├── pacman_game.py
+│   └── README.md
+├── 🤖 text_describer/
 │   ├── text_describer.py
-│   ├── README.md
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── README.md
+├── 🖼️ image_describer/
+│   ├── image_describer.py
+│   ├── requirements.txt
+│   └── README.md
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 🎮 Proyek Game
+## 🎮 Game Tic-Tac-Toe
 
-Folder `game` berisi koleksi permainan sederhana yang dibangun menggunakan **Pygame**. Setiap game dirancang untuk menjadi contoh implementasi logika permainan dan antarmuka pengguna grafis (GUI).
+Game klasik Tic-Tac-Toe dengan antarmuka grafis modern yang dibangun menggunakan **Pygame**. Dilengkapi dengan AI cerdas menggunakan algoritma **Minimax**.
 
--   **Tic-Tac-Toe**: Game Tic-Tac-Toe lengkap dengan GUI, mode Player vs AI, dan algoritma **Minimax** untuk AI yang cerdas.
--   **Pac-Man**: Implementasi sederhana dari game arcade klasik Pac-Man dengan animasi dan pergerakan hantu.
+**Fitur Utama:**
+-   Mode Player vs Player dan Player vs AI
+-   AI dengan tingkat kesulitan berbeda (Mudah & Sulit)
+-   Interface GUI yang menarik dan responsif
+-   Algoritma Minimax untuk AI yang tak terkalahkan
 
-> ➡️ **Untuk instruksi lengkap mengenai instalasi dan cara menjalankan, lihat [README Proyek Game](game/README.md)**
+> ➡️ **[Baca dokumentasi lengkap Tic-Tac-Toe](tictactoe/README.md)**
 
 ---
 
-## 🤖 Proyek AI Translate & Describe
+## 🟡 Game Pac-Man
 
-Folder `translate` berisi aplikasi-aplikasi yang memanfaatkan **Google Generative AI (Gemini)** untuk melakukan tugas-tugas terkait pemrosesan gambar dan teks.
+Implementasi klasik dari game arcade legendaris Pac-Man dengan fitur modern dan animasi yang smooth menggunakan **Pygame**.
 
--   **Image Describer**: Sebuah aplikasi GUI untuk menganalisis dan memberikan deskripsi konten dari sebuah file gambar.
--   **Text Describer**: Aplikasi GUI yang berfungsi sebagai penerjemah teks ke Bahasa Indonesia.
+**Fitur Utama:**
+-   Gameplay klasik Pac-Man dengan labirin
+-   Animasi karakter yang dinamis
+-   AI hantu yang cerdas
+-   Sistem skor dan kecepatan yang bertambah
 
-> ➡️ **Untuk instruksi detail, termasuk cara mengatur API key dan menjalankan aplikasi, lihat [README Proyek Translate](translate/README.md)**
+> ➡️ **[Baca dokumentasi lengkap Pac-Man](pacman/README.md)**
+
+---
+
+## 🤖 Text Describer - Penerjemah AI
+
+Aplikasi penerjemah teks yang memanfaatkan **Google Generative AI (Gemini)** untuk menerjemahkan teks dari berbagai bahasa ke Bahasa Indonesia dengan hasil yang natural.
+
+**Fitur Utama:**
+-   Penerjemahan universal ke Bahasa Indonesia
+-   Interface GUI yang sederhana dan intuitif
+-   Validasi input dan penghitung karakter
+-   Menggunakan model AI Gemini terbaru
+
+> ➡️ **[Baca dokumentasi lengkap Text Describer](text_describer/README.md)**
+
+---
+
+## 🖼️ Image Describer - Analisis Gambar AI
+
+Aplikasi untuk menganalisis dan memberikan deskripsi konten gambar menggunakan **Google Generative AI (Gemini)** dengan hasil dalam Bahasa Indonesia.
+
+**Fitur Utama:**
+-   Analisis gambar menggunakan AI computer vision
+-   Deskripsi detail dalam Bahasa Indonesia
+-   Mendukung format PNG, JPG, JPEG
+-   File browser yang mudah digunakan
+
+> ➡️ **[Baca dokumentasi lengkap Image Describer](image_describer/README.md)**
 
 ---
