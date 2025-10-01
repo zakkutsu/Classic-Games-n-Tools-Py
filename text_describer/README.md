@@ -444,6 +444,118 @@ python text_describer.py
 5. **Results:** Translation appears with success notification
 6. **Clear (Optional):** Use "🗑️ Clear" button to reset
 
+## 📝 Dependencies
+
+The `requirements.txt` file contains:
+```
+flet>=0.21.0
+google-generativeai>=0.3.0
+Pillow>=10.0.0
+requests>=2.31.0
+```
+
+## 🔧 Technical Features
+
+### **Modern Architecture**
+- **Flet Framework:** Cross-platform modern UI framework
+- **Event-driven:** Reactive programming with callback functions
+- **Component-based:** Modular UI components with proper separation
+- **State Management:** Efficient state updates with page.update()
+
+### **AI Integration**
+- **Model:** gemini-2.5-flash (optimized for speed and accuracy)
+- **Prompt Engineering:** Optimized prompts for best translation results
+- **Error Handling:** Comprehensive API error handling with retry logic
+- **Streaming:** Non-blocking API calls for better UX
+
+### **Performance Optimizations**
+- **Lazy Loading:** Components loaded as needed
+- **Efficient Rendering:** Minimal DOM updates with selective updates
+- **Memory Management:** Proper cleanup and resource management
+- **Responsive Updates:** Real-time updates without lag
+
+### **UI/UX Features**
+- **Dark Theme:** Consistent modern dark theme
+- **Color System:** Systematic color coding for different states
+- **Typography:** Clear hierarchy with proper font weights
+- **Spacing System:** Consistent margin and padding
+- **Animation:** Smooth transitions and micro-interactions
+
+## 💡 Usage Tips
+
+### **Optimal Usage**
+1. **Long Text:** For text >10k characters, consider splitting into multiple parts
+2. **Context Clarity:** Provide clear context for technical term translations
+3. **Format Preservation:** Application maintains paragraph structure and formatting
+4. **Batch Processing:** Use clear function for efficient workflow
+
+### **Advanced Features**
+1. **Statistics Monitoring:** Use statistics panel to track productivity
+2. **Error Recovery:** Pay attention to color-coded feedback for debugging
+3. **Performance:** Monitor character count for optimal processing speed
+4. **Workflow:** Use keyboard shortcuts and efficient input methods
+
+## 🛠️ Troubleshooting
+
+### **Common Issues**
+
+#### **API Key Errors**
+- **Symptom:** Error dialog at launch
+- **Solution:** Verify API key in Google AI Studio, check internet connection
+- **Prevention:** Test API key before deployment
+
+#### **Connection Issues**
+- **Symptom:** Red snackbar with connection error message
+- **Solution:** Check firewall, restart app, verify internet stability
+- **Recovery:** Automatic retry after connection restored
+
+#### **Performance Issues**
+- **Symptom:** Slow response or UI lag
+- **Solution:** Reduce text size, check system resources, restart app
+- **Optimization:** Use text splitting for large documents
+
+#### **Translation Quality**
+- **Symptom:** Poor translation results
+- **Solution:** Provide clearer context, check source text quality
+- **Enhancement:** Use specific terminology, verify spelling
+
+### **Advanced Debugging**
+- **UI Issues:** Check Flet version compatibility
+- **API Issues:** Monitor API quotas and rate limits
+- **Performance:** Use system monitor for resource usage
+- **Error Logs:** Check console output for detailed errors
+
+## 🔧 Customization & Development
+
+### **Theme Customization**
+```python
+# Change theme mode
+page.theme_mode = ft.ThemeMode.LIGHT  # or DARK, SYSTEM
+
+# Custom colors
+page.bgcolor = ft.colors.GREY_900
+```
+
+### **Window Customization**
+```python
+# Window size
+page.window_width = 800
+page.window_height = 900
+
+# Window properties
+page.window_resizable = True
+page.window_maximizable = True
+```
+
+### **Model Customization**
+```python
+# Change AI model
+model = genai.GenerativeModel('gemini-1.5-pro')  # More advanced model
+
+# Custom prompt
+custom_prompt = "Translate to Indonesian with formal tone: {text}"
+```
+
 ## 🚀 **Advanced Development**
 
 ### **Potential Features**
@@ -465,6 +577,18 @@ python text_describer.py
 - **Collaboration Features:** Share translations with team members
 - **Analytics Dashboard:** Usage statistics and productivity metrics
 - **Plugin System:** Extensible architecture for custom features
+
+### **Technical Roadmap**
+- **Database Integration:** SQLite for storing history and preferences
+- **Cloud Sync:** Cross-device data synchronization
+- **RESTful API:** Backend API for mobile app integration
+- **Containerization:** Docker support for easy deployment
+- **Testing Framework:** Automated testing with pytest
+- **CI/CD Pipeline:** GitHub Actions for automated deployment
+
+## 📝 License
+
+This project is created for educational and development purposes. Please use and modify as needed while maintaining appropriate credits.
 
 ---
 
@@ -551,6 +675,150 @@ python text_describer.py
 - **分析ダッシュボード:** 使用統計と生産性メトリクス
 - **プラグインシステム:** カスタム機能用の拡張可能アーキテクチャ
 
----
+## 📝 依存関係
 
-**モダンなAIでの翻訳をお楽しみください！🚀**
+`requirements.txt`ファイルに含まれる内容:
+```
+flet>=0.21.0
+google-generativeai>=0.3.0
+Pillow>=10.0.0
+requests>=2.31.0
+```
+
+## 🔧 技術的機能
+
+### **モダンアーキテクチャ**
+- **Fletフレームワーク:** クロスプラットフォームのモダンUIフレームワーク
+- **イベント駆動:** コールバック関数でのリアクティブプログラミング
+- **コンポーネントベース:** 適切な分離を持つモジュラーUIコンポーネント
+- **状態管理:** page.update()での効率的な状態更新
+
+### **AI統合**
+- **モデル:** gemini-2.5-flash（速度と精度に最適化）
+- **プロンプトエンジニアリング:** 最適な翻訳結果のための最適化されたプロンプト
+- **エラーハンドリング:** 再試行ロジックを含む包括的なAPIエラーハンドリング
+- **ストリーミング:** より良いUXのためのノンブロッキングAPIコール
+
+### **パフォーマンス最適化**
+- **遅延読み込み:** 必要に応じてコンポーネントを読み込み
+- **効率的レンダリング:** 選択的更新での最小DOM更新
+- **メモリ管理:** 適切なクリーンアップとリソース管理
+- **レスポンシブ更新:** ラグなしのリアルタイム更新
+
+### **UI/UX機能**
+- **ダークテーマ:** 一貫したモダンダークテーマ
+- **カラーシステム:** 異なる状態のための体系的カラーコーディング
+- **タイポグラフィ:** 適切なフォントウェイトでの明確な階層
+- **スペーシングシステム:** 一貫したマージンとパディング
+- **アニメーション:** スムーズなトランジションとマイクロインタラクション
+
+## 💡 使用のコツ
+
+### **最適な使用方法**
+1. **長いテキスト:** 10k文字を超えるテキストの場合、複数の部分に分割することを検討
+2. **コンテキストの明確化:** 技術用語の翻訳に明確なコンテキストを提供
+3. **フォーマット保持:** アプリケーションは段落構造とフォーマットを維持
+4. **バッチ処理:** 効率的なワークフローのためにクリア機能を使用
+
+### **高度な機能**
+1. **統計監視:** 統計パネルを使用して生産性を追跡
+2. **エラー復旧:** デバッグのためにカラーコード化されたフィードバックに注意
+3. **パフォーマンス:** 最適な処理速度のために文字数を監視
+4. **ワークフロー:** キーボードショートカットと効率的な入力方法を使用
+
+## 🛠️ トラブルシューティング
+
+### **一般的な問題**
+
+#### **APIキーエラー**
+- **症状:** 起動時のエラーダイアログ
+- **解決方法:** Google AI StudioでAPIキーを確認、インターネット接続をチェック
+- **予防:** デプロイ前にAPIキーをテスト
+
+#### **接続の問題**
+- **症状:** 接続エラーメッセージ付きの赤いスナックバー
+- **解決方法:** ファイアウォールをチェック、アプリを再起動、インターネットの安定性を確認
+- **復旧:** 接続復旧後の自動再試行
+
+#### **パフォーマンスの問題**
+- **症状:** 応答が遅いまたはUIのラグ
+- **解決方法:** テキストサイズを減らす、システムリソースをチェック、アプリを再起動
+- **最適化:** 大きなドキュメントにはテキスト分割を使用
+
+#### **翻訳品質**
+- **症状:** 翻訳結果が悪い
+- **解決方法:** より明確なコンテキストを提供、ソーステキストの品質をチェック
+- **改善:** 特定の用語を使用、スペルを確認
+
+### **高度なデバッグ**
+- **UIの問題:** Fletバージョンの互換性をチェック
+- **APIの問題:** APIクォータとレート制限を監視
+- **パフォーマンス:** リソース使用量のためにシステムモニターを使用
+- **エラーログ:** 詳細エラーのためにコンソール出力をチェック
+
+## 🔧 カスタマイゼーションと開発
+
+### **テーマカスタマイゼーション**
+```python
+# テーマモードの変更
+page.theme_mode = ft.ThemeMode.LIGHT  # またはDARK、SYSTEM
+
+# カスタムカラー
+page.bgcolor = ft.colors.GREY_900
+```
+
+### **ウィンドウカスタマイゼーション**
+```python
+# ウィンドウサイズ
+page.window_width = 800
+page.window_height = 900
+
+# ウィンドウプロパティ
+page.window_resizable = True
+page.window_maximizable = True
+```
+
+### **モデルカスタマイゼーション**
+```python
+# AIモデルの変更
+model = genai.GenerativeModel('gemini-1.5-pro')  # より高度なモデル
+
+# カスタムプロンプト
+custom_prompt = "Translate to Indonesian with formal tone: {text}"
+```
+
+## 🚀 **高度な開発**
+
+### **潜在的な機能**
+- **バッチ処理:** キューシステムで複数のテキストを同時翻訳
+- **翻訳履歴:** ローカルデータベースで翻訳履歴を保存
+- **カスタムプロンプト:** ユーザーがカスタマイズ可能なプロンプトテンプレート
+- **言語検出:** 信頼度スコア付きソース言語の自動検出
+- **結果エクスポート:** 様々な形式（TXT、PDF、DOCX）への翻訳エクスポート
+- **翻訳品質スコア:** AI駆動の翻訳品質評価
+- **オフラインモード:** オフラインアクセス用のキャッシュ翻訳
+- **音声入力:** 音声入力用の音声テキスト変換統合
+- **リアルタイム翻訳:** ユーザーがタイプ中のライブ翻訳
+- **複数出力言語:** 様々なターゲット言語への翻訳
+
+### **計画された改善**
+- **パフォーマンス最適化:** よく使用されるプロンプトのキャッシュメカニズム
+- **UI改善:** テーマカスタマイゼーションとアクセシビリティ機能
+- **API統合:** 複数のAIプロバイダーのサポート（OpenAI、Claude等）
+- **コラボレーション機能:** チームメンバーとの翻訳共有
+- **分析ダッシュボード:** 使用統計と生産性メトリクス
+- **プラグインシステム:** カスタム機能用の拡張可能アーキテクチャ
+
+### **技術ロードマップ**
+- **データベース統合:** 履歴と設定を保存するSQLite
+- **クラウド同期:** デバイス間データ同期
+- **RESTful API:** モバイルアプリ統合用バックエンドAPI
+- **コンテナ化:** 簡単デプロイ用Dockerサポート
+- **テストフレームワーク:** pytestでの自動テスト
+- **CI/CDパイプライン:** 自動デプロイ用GitHub Actions
+
+## 📝 ライセンス
+
+このプロジェクトは教育および開発目的で作成されています。適切なクレジットを維持しながら、必要に応じて使用および変更してください。
+
+---

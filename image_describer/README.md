@@ -458,6 +458,127 @@ python image_describer.py
 6. **Results:** Detailed description appears with success notification
 7. **Clear (Optional):** Use "🗑️ Clear" button to reset
 
+## 📝 Dependencies
+
+The `requirements.txt` file contains:
+```
+flet>=0.21.0
+google-generativeai>=0.3.0
+Pillow>=10.0.0
+requests>=2.31.0
+```
+
+## 🔧 Technical Features
+
+### **Modern Architecture**
+- **Flet Framework:** Cross-platform modern UI framework
+- **Event-driven:** Reactive programming with callback functions
+- **Component-based:** Modular UI components with proper separation
+- **State Management:** Efficient state updates with page.update()
+
+### **Computer Vision Integration**
+- **Model:** gemini-2.5-flash with vision capabilities
+- **Image Processing:** PIL/Pillow for preprocessing and validation
+- **Format Support:** PNG, JPG, JPEG, GIF, WebP
+- **Size Optimization:** Smart file size validation (max 10MB)
+
+### **AI Analysis Features**
+- **Detailed Description:** Comprehensive object and scene analysis
+- **Color Analysis:** Color composition and visual elements
+- **Activity Recognition:** Scene context and situation analysis
+- **Technical Details:** Format, composition, and artistic elements
+
+### **Performance Optimizations**
+- **Lazy Loading:** Components loaded as needed
+- **Efficient Image Handling:** Optimized image loading and processing
+- **Memory Management:** Proper cleanup and resource management
+- **Responsive File Operations:** Non-blocking file operations
+
+### **UI/UX Features**
+- **Dark Theme:** Consistent modern dark theme
+- **Color System:** Systematic color coding (Purple: files, Green: analysis)
+- **File Picker Integration:** Native file picker with proper filtering
+- **Progress Feedback:** Real-time progress indicators
+- **Error Visualization:** Color-coded error states and recovery
+
+## 💡 Usage Tips
+
+### **Optimal Usage**
+1. **File Quality:** Use images with good resolution for best analysis results
+2. **Format Preference:** JPG/PNG provide optimal analysis results
+3. **File Size:** Images 1-5MB provide balance between quality and speed
+4. **Content Types:** AI can analyze landscapes, objects, people, text in images
+
+### **Advanced Features**
+1. **Batch Analysis:** Use clear function for efficient workflow
+2. **Error Recovery:** Pay attention to color-coded feedback for troubleshooting
+3. **Performance:** Monitor file size for optimal processing speed
+4. **Quality:** Clear and well-lit images provide more detailed analysis
+
+## 🛠️ Troubleshooting
+
+### **Common Issues**
+
+#### **API Key Errors**
+- **Symptom:** Error dialog at launch
+- **Solution:** Verify API key in Google AI Studio, check internet connection
+- **Prevention:** Test API key before deployment
+
+#### **File Format Issues**
+- **Symptom:** "Unsupported file format" message
+- **Solution:** Use PNG, JPG, JPEG, GIF, or WebP formats
+- **Recovery:** Convert file to supported format
+
+#### **File Size Issues**
+- **Symptom:** "File size too large" warning
+- **Solution:** Compress image or use file < 10MB
+- **Optimization:** Resize image maintaining aspect ratio
+
+#### **Analysis Quality**
+- **Symptom:** Less detailed descriptions
+- **Solution:** Use images with good resolution and lighting
+- **Enhancement:** Choose images with clear and focused content
+
+### **Advanced Debugging**
+- **UI Issues:** Check Flet version compatibility
+- **API Issues:** Monitor API quotas and rate limits  
+- **Performance:** Use system monitor for resource usage
+- **Image Issues:** Validate image integrity with image viewers
+
+## 🔧 Customization & Development
+
+### **Theme Customization**
+```python
+# Change theme mode
+page.theme_mode = ft.ThemeMode.LIGHT  # or DARK, SYSTEM
+
+# Custom colors
+page.bgcolor = ft.colors.GREY_900
+```
+
+### **Window Customization**
+```python
+# Window size
+page.window_width = 800
+page.window_height = 1000
+
+# Window properties
+page.window_resizable = True
+page.window_maximizable = True
+```
+
+### **Analysis Customization**
+```python
+# Custom prompt for analysis
+custom_prompt = """
+Analyze this image in detail in Indonesian.
+Focus on: main objects, color composition, activities occurring.
+"""
+
+# File size limit
+MAX_FILE_SIZE = 15 * 1024 * 1024  # 15MB
+```
+
 ## 🚀 **Advanced Development**
 
 ### **Potential Features**
@@ -481,6 +602,19 @@ python image_describer.py
 - **API Integration:** RESTful API for integration with other applications
 - **Mobile Companion:** Companion mobile app for capture and sync
 - **Real-time Camera:** Live camera feed analysis with real-time description
+
+### **Technical Roadmap**
+- **Database Integration:** SQLite for storing metadata and results
+- **Image Processing Pipeline:** Advanced preprocessing with OpenCV
+- **Machine Learning Enhancement:** Custom model training for domain-specific analysis
+- **Microservices Architecture:** Scalable backend with containerization
+- **WebSocket Integration:** Real-time updates for collaborative analysis
+- **Testing Framework:** Automated testing with pytest and image fixtures
+- **Documentation Generator:** Auto-generate API docs and user guides
+
+## 📝 License
+
+This project is created for educational and development purposes. Please use and modify as needed while maintaining appropriate credits.
 
 ---
 
@@ -570,6 +704,162 @@ python image_describer.py
 - **モバイルコンパニオン:** キャプチャと同期用のコンパニオンモバイルアプリ
 - **リアルタイムカメラ:** リアルタイム説明付きライブカメラフィード分析
 
----
+## 📝 依存関係
 
-**モダンなAIでの画像分析をお楽しみください！🚀**
+`requirements.txt`ファイルに含まれる内容:
+```
+flet>=0.21.0
+google-generativeai>=0.3.0
+Pillow>=10.0.0
+requests>=2.31.0
+```
+
+## 🔧 技術的機能
+
+### **モダンアーキテクチャ**
+- **Fletフレームワーク:** クロスプラットフォームのモダンUIフレームワーク
+- **イベント駆動:** コールバック関数でのリアクティブプログラミング
+- **コンポーネントベース:** 適切な分離を持つモジュラーUIコンポーネント
+- **状態管理:** page.update()での効率的な状態更新
+
+### **コンピュータービジョン統合**
+- **モデル:** ビジョン機能付きgemini-2.5-flash
+- **画像処理:** 前処理と検証用PIL/Pillow
+- **フォーマットサポート:** PNG、JPG、JPEG、GIF、WebP
+- **サイズ最適化:** スマートなファイルサイズ検証（最大10MB）
+
+### **AI分析機能**
+- **詳細説明:** 包括的なオブジェクトとシーン分析
+- **色分析:** 色構成と視覚的要素
+- **アクティビティ認識:** シーンコンテキストと状況分析
+- **技術的詳細:** フォーマット、構成、芸術的要素
+
+### **パフォーマンス最適化**
+- **遅延読み込み:** 必要に応じてコンポーネントを読み込み
+- **効率的画像処理:** 最適化された画像読み込みと処理
+- **メモリ管理:** 適切なクリーンアップとリソース管理
+- **レスポンシブファイル操作:** ノンブロッキングファイル操作
+
+### **UI/UX機能**
+- **ダークテーマ:** 一貫したモダンダークテーマ
+- **カラーシステム:** 体系的カラーコーディング（紫：ファイル、緑：分析）
+- **ファイルピッカー統合:** 適切なフィルタリング付きネイティブファイルピッカー
+- **プログレスフィードバック:** リアルタイムプログレスインジケーター
+- **エラー視覚化:** カラーコード化されたエラー状態と復旧
+
+## 💡 使用のコツ
+
+### **最適な使用方法**
+1. **ファイル品質:** 最適な分析結果のために高品質な解像度の画像を使用
+2. **フォーマットの優先:** JPG/PNGが最適な分析結果を提供
+3. **ファイルサイズ:** 1-5MBの画像が品質と速度のバランスを提供
+4. **コンテンツタイプ:** AIは景観、オブジェクト、人、画像内のテキストを分析可能
+
+### **高度な機能**
+1. **バッチ分析:** 効率的なワークフローのためにクリア機能を使用
+2. **エラー復旧:** トラブルシューティングのためにカラーコード化されたフィードバックに注意
+3. **パフォーマンス:** 最適な処理速度のためにファイルサイズを監視
+4. **品質:** 明確で適切な照明の画像がより詳細な分析を提供
+
+## 🛠️ トラブルシューティング
+
+### **一般的な問題**
+
+#### **APIキーエラー**
+- **症状:** 起動時のエラーダイアログ
+- **解決方法:** Google AI StudioでAPIキーを確認、インターネット接続をチェック
+- **予防:** デプロイ前にAPIキーをテスト
+
+#### **ファイルフォーマットの問題**
+- **症状:** 「サポートされていないファイルフォーマット」メッセージ
+- **解決方法:** PNG、JPG、JPEG、GIF、WebPフォーマットを使用
+- **復旧:** サポートされているフォーマットにファイルを変換
+
+#### **ファイルサイズの問題**
+- **症状:** 「ファイルサイズが大きすぎます」警告
+- **解決方法:** 画像を圧縮するか10MB未満のファイルを使用
+- **最適化:** アスペクト比を維持して画像をリサイズ
+
+#### **分析品質**
+- **症状:** 詳細さの低い説明
+- **解決方法:** 高解像度と良い照明の画像を使用
+- **改善:** 明確でフォーカスのあるコンテンツの画像を選択
+
+### **高度なデバッグ**
+- **UIの問題:** Fletバージョンの互換性をチェック
+- **APIの問題:** APIクォータとレート制限を監視  
+- **パフォーマンス:** リソース使用量のためにシステムモニターを使用
+- **画像の問題:** 画像ビューアーで画像の整合性を検証
+
+## 🔧 カスタマイゼーションと開発
+
+### **テーマカスタマイズ**
+```python
+# テーマモードの変更
+page.theme_mode = ft.ThemeMode.LIGHT  # またはDARK、SYSTEM
+
+# カスタムカラー
+page.bgcolor = ft.colors.GREY_900
+```
+
+### **ウィンドウカスタマイズ**
+```python
+# ウィンドウサイズ
+page.window_width = 800
+page.window_height = 1000
+
+# ウィンドウプロパティ
+page.window_resizable = True
+page.window_maximizable = True
+```
+
+### **分析カスタマイズ**
+```python
+# 分析用カスタムプロンプト
+custom_prompt = """
+この画像をインドネシア語で詳細に分析してください。
+主要オブジェクト、色構成、発生しているアクティビティに焦点を当ててください。
+"""
+
+# ファイルサイズ制限
+MAX_FILE_SIZE = 15 * 1024 * 1024  # 15MB
+```
+
+## 🚀 **高度な開発**
+
+### **潜在的な機能**
+- **バッチ処理:** キューシステムで複数の画像を同時分析
+- **結果エクスポート:** 分析結果をファイルに保存（TXT、PDF、JSON）
+- **画像フィルター:** 精度向上のための前処理（コントラスト、明度、ノイズ除去）
+- **高度なプロンプト:** 特定分析（オブジェクトカウント、色分析、テキスト認識、シーン理解）
+- **比較モード:** 複数の画像からの分析比較
+- **画像履歴:** 以前の分析結果を保存するローカルデータベース
+- **カスタムテンプレート:** 特定ニーズ用のカスタマイズ可能プロンプトテンプレート
+- **OCR統合:** 画像からのテキスト抽出と翻訳
+- **画像強化:** 分析前の自動画像強化
+- **多言語出力:** 様々な言語での分析結果
+
+### **計画された改善**
+- **パフォーマンス最適化:** 大きなファイル用の画像圧縮とキャッシュ
+- **クラウドストレージ統合:** クラウドサービス（Google Drive、Dropbox）からのアップロードと分析
+- **AIモデル選択:** 異なる分析用の複数AIモデル選択
+- **注釈ツール:** 画像内の特定エリアをハイライトするマークアップツール
+- **レポート生成:** チャートと統計を含む包括的レポートの生成
+- **API統合:** 他のアプリケーションとの統合用RESTful API
+- **モバイルコンパニオン:** キャプチャと同期用コンパニオンモバイルアプリ
+- **リアルタイムカメラ:** リアルタイム説明付きライブカメラフィード分析
+
+### **技術ロードマップ**
+- **データベース統合:** メタデータと結果を保存するSQLite
+- **画像処理パイプライン:** OpenCVでの高度前処理
+- **機械学習強化:** ドメイン固有分析用カスタムモデルトレーニング
+- **マイクロサービスアーキテクチャ:** コンテナ化でのスケーラブルバックエンド
+- **WebSocket統合:** コラボレーティブ分析用リアルタイム更新
+- **テストフレームワーク:** pytestと画像フィクスチャでの自動テスト
+- **ドキュメントジェネレーター:** APIドキュメントとユーザーガイドの自動生成
+
+## 📝 ライセンス
+
+このプロジェクトは教育および開発目的で作成されています。適切なクレジットを維持しながら、必要に応じて使用および変更してください。
+
+---

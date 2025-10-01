@@ -300,6 +300,84 @@ cd image_describer
 
 <sub><i>🔄 Repeat steps 3-5 to run the new tool</i></sub>
 
+## 🏷️ Text Tags
+`Python`, `Pygame`, `Pac-Man`, `Arcade Game`, `Game Development`, `Animation`, `AI Pathfinding`, `Classic Games`, `Retro Gaming`, `Computer Graphics`
+
+## 🎬 Demo
+
+### Game Scenario:
+1. **Game Start:** Player starts with Pac-Man at initial position (center bottom of maze)
+2. **Initial Movement:** 
+   - Pac-Man moves right with mouth opening-closing animation
+   - Red, pink, and cyan ghosts start patrolling their respective areas
+3. **Pellet Collection:**
+   - Player navigates through narrow corridors, eating white pellets
+   - Each pellet gives +10 points, score increases in real-time
+   - Ghost AI starts detecting Pac-Man's position and moves closer
+4. **Chase Sequence:**
+   - Red ghost actively chases, player must use maze corners to avoid
+   - Game speed increases 10% every 3 seconds - gameplay becomes more intense
+5. **Near Miss:** Pac-Man almost gets caught in narrow corridor, successfully escapes to left tunnel
+6. **Tunnel Mechanic:** Exit from left side of screen, appear on right side (wraparound)
+7. **Victory/Defeat:** 
+   - **Win:** All pellets consumed → "You Win!" with final score
+   - **Lose:** Caught by ghost → "Game Over!" with restart option
+
+### Technical Features:
+- **Smooth Animation:** 60 FPS with smooth movement interpolation
+- **Dynamic Speed:** Progressive difficulty with FPS scaling
+- **Collision Detection:** Pixel-perfect detection for walls and ghosts
+- **Audio-Visual Feedback:** Screen flash on game over, victory celebration
+
+## 🎮 Game Features
+
+### Pac-Man Animation
+- Mouth opens and closes while moving
+- Character rotation according to movement direction
+- Smooth and responsive animation
+
+### Ghost AI
+- Ghosts automatically move to chase the player
+- Each ghost has different colors (red, pink, cyan)
+- Realistic movement within the maze
+
+### Speed System
+- Game starts at normal speed
+- Speed increases every 3 seconds (10% faster)
+- Provides increasingly challenging gameplay
+
+## 🏗️ Code Structure
+
+The `pacman_game.py` file consists of:
+- **Player Class:** Pac-Man movement logic and animation
+- **Ghost Class:** AI and ghost movement
+- **Maze Layout:** Customizable maze design
+- **Game Loop:** Main game logic and rendering
+- **Collision Detection:** Collision detection and interactions
+
+## 🎨 Customization
+
+You can modify:
+- **Maze layout** in the `maze_map` variable
+- **Game speed** in the `INITIAL_FPS` constant
+- **Character colors** in the color constants
+- **Screen size** in `SCREEN_WIDTH` and `SCREEN_HEIGHT`
+
+## 🔧 Development
+
+This game uses:
+- **Pygame** for graphics and input handling
+- **Python OOP** for clean code structure
+- **Mathematical calculations** for AI and collision detection
+
+## 📝 Playing Tips
+
+1. **Plan your route** before moving
+2. **Observe ghost movement patterns** to avoid them
+3. **Use maze corners** to hide temporarily
+4. **Move quickly** when ghosts are moving away
+5. **Don't get trapped** in dead ends
+
 ---
 
 **Happy playing and good luck defeating the ghosts! 👻🟡**
@@ -411,6 +489,86 @@ cd image_describer
 ```
 
 <sub><i>🔄 新しいツールを実行するには手順3-5を繰り返してください</i></sub>
+
+---
+
+## 🏷️ テキストタグ
+`Python`, `Pygame`, `パックマン`, `アーケードゲーム`, `ゲーム開発`, `アニメーション`, `AI経路探索`, `クラシックゲーム`, `レトロゲーミング`, `コンピューターグラフィックス`
+
+## 🎬 デモ
+
+### ゲームシナリオ:
+1. **ゲーム開始:** プレイヤーは迷路の初期位置（中央下部）でパックマンを開始
+2. **初期移動:** 
+   - パックマンが口の開閉アニメーションで右に移動
+   - 赤、ピンク、シアンのゴーストがそれぞれのエリアでパトロール開始
+3. **ペレット収集:**
+   - プレイヤーが狭い廊下を移動し、白いペレットを食べる
+   - 各ペレットで+10ポイント、スコアがリアルタイムで増加
+   - ゴーストAIがパックマンの位置を検出し、近づき始める
+4. **追跡シーケンス:**
+   - 赤いゴーストが積極的に追跡、プレイヤーは迷路の角を使って回避
+   - 3秒ごとにゲーム速度が10%増加 - ゲームプレイがより激しくなる
+5. **ニアミス:** パックマンが狭い廊下でほぼ捕まりそうになるが、左のトンネルへの脱出に成功
+6. **トンネルメカニクス:** 画面左側から出て右側に現れる（ラップアラウンド）
+7. **勝利/敗北:** 
+   - **勝利:** すべてのペレット消費 → 最終スコアで「勝利！」
+   - **敗北:** ゴーストに捕まる → 再開オプション付き「ゲームオーバー！」
+
+### 技術的特徴:
+- **スムーズアニメーション:** スムーズな移動補間での60 FPS
+- **ダイナミックスピード:** FPSスケーリングによる段階的難易度
+- **衝突検出:** 壁とゴーストのピクセル完璧な検出
+- **オーディオビジュアルフィードバック:** ゲームオーバー時の画面フラッシュ、勝利祝賀
+
+## 🎮 ゲーム機能
+
+### パックマンアニメーション
+- 移動中に口が開閉
+- 移動方向に応じたキャラクター回転
+- スムーズで反応の良いアニメーション
+
+### ゴーストAI
+- ゴーストが自動的にプレイヤーを追跡するように移動
+- 各ゴーストは異なる色（赤、ピンク、シアン）
+- 迷路内での現実的な移動
+
+### スピードシステム
+- ゲームは通常速度で開始
+- 3秒ごとに速度が増加（10%高速化）
+- ますます挑戦的なゲームプレイを提供
+
+## 🏗️ コード構造
+
+`pacman_game.py`ファイルの構成:
+- **Playerクラス:** パックマンの移動ロジックとアニメーション
+- **Ghostクラス:** AIとゴーストの移動
+- **迷路レイアウト:** カスタマイズ可能な迷路設計
+- **ゲームループ:** メインゲームロジックとレンダリング
+- **衝突検出:** 衝突検出と相互作用
+
+## 🎨 カスタマイゼーション
+
+変更可能項目:
+- `maze_map`変数の**迷路レイアウト**
+- `INITIAL_FPS`定数の**ゲーム速度**
+- 色定数の**キャラクター色**
+- `SCREEN_WIDTH`と`SCREEN_HEIGHT`の**画面サイズ**
+
+## 🔧 開発
+
+このゲームは以下を使用:
+- **Pygame** - グラフィックスと入力処理用
+- **Python OOP** - クリーンなコード構造用
+- **数学計算** - AIと衝突検出用
+
+## 📝 プレイのコツ
+
+1. **移動前にルートを計画**
+2. **ゴーストの移動パターンを観察**して回避
+3. **迷路の角を使用**して一時的に隠れる
+4. **ゴーストが離れる時に素早く移動**
+5. **行き止まりで罠にかからない**
 
 ---
 
