@@ -1,5 +1,11 @@
 # 🖼️ Image Describer - Deskripsi Gambar AI
 
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#id) | [🇺🇸 English](#en) | [🇯🇵 日本語](#jp)
+
+---
+
+## 🇮🇩 Bahasa Indonesia {#id}
+
 Selamat datang di **Image Describer**! Aplikasi yang menggunakan kekuatan **Google Generative AI (Gemini)** untuk menganalisis dan memberikan deskripsi konten gambar dalam Bahasa Indonesia yang jelas dan detail.
 
 ## 🌟 Fitur Utama
@@ -205,3 +211,235 @@ Proyek ini dibuat untuk tujuan edukasi dan pengembangan. Silakan gunakan dan mod
 ---
 
 **Jelajahi dunia gambar dengan AI! 📸✨**
+
+---
+
+## 🇺🇸 English {#en}
+
+Welcome to **Image Describer**! An application that uses the power of **Google Generative AI (Gemini)** to analyze and provide image content descriptions in clear and detailed Indonesian.
+
+## 🌟 Key Features
+
+- **AI Image Analysis:** Uses `gemini-2.5-flash` model for computer vision
+- **Indonesian Descriptions:** Results analysis in natural and easy-to-understand language
+- **Simple GUI:** User-friendly interface with PySimpleGUI
+- **File Browser:** Easy image file selection from computer
+- **Format Support:** Supports PNG, JPG, JPEG
+- **Error Handling:** Informative error management
+
+## 🎯 How to Use
+
+1. **Select Image:** Click "Browse Image" button to open file explorer
+2. **Browse File:** Select image file (PNG, JPG, JPEG) from your computer
+3. **Confirm Path:** File path will appear in input box
+4. **Analyze:** Click "Start Describing" to process image
+5. **View Results:** Image description will appear in bottom text area
+
+## ⚙️ Installation and Setup
+
+### 1. Prerequisites
+- Python 3.6 or newer
+- Active internet connection
+- Google AI Studio API Key
+
+### 2. Navigate to Folder
+```bash
+cd image_describer
+```
+
+### 3. Create Virtual Environment (Recommended)
+**Create virtual environment:**
+```bash
+python -m venv venv
+```
+
+**Activate virtual environment:**
+
+*PowerShell:*
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+*Command Prompt:*
+```cmd
+venv\Scripts\activate.bat
+```
+
+*Git Bash:*
+```bash
+source venv/Scripts/activate
+```
+
+### 4. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+**Or install manually if there are issues:**
+```bash
+pip install google-generativeai Pillow
+pip install --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
+```
+
+### 5. Setup API Key
+1. Open [Google AI Studio](https://aistudio.google.com/)
+2. Register/login and get free API Key
+3. Open `image_describer.py` file
+4. Replace this line:
+```python
+API_KEY = "API_KEY_GEMINI_ANDA"  # Replace with your API key
+```
+
+### 6. Run Application
+```bash
+python image_describer.py
+```
+
+### 7. Switch to Other Tools/Folders
+<sub><i>💡 Guide for beginners</i></sub>
+
+After finishing using the application, you can switch to other tools:
+
+**Exit virtual environment:**
+```bash
+deactivate
+```
+
+**Return to main folder:**
+```bash
+cd ..
+```
+
+**Move to other tools, example:**
+```bash
+# For Tic-Tac-Toe game
+cd tictactoe
+
+# For Pac-Man game
+cd pacman
+
+# For Text Describer (AI)
+cd text_describer
+```
+
+<sub><i>🔄 Repeat steps 3-6 to run the new tool</i></sub>
+
+---
+
+**Explore the world of images with AI! 📸✨**
+
+---
+
+## 🇯🇵 日本語 {#jp}
+
+**画像記述者**へようこそ！**Google Generative AI (Gemini)**の力を使用して画像コンテンツを分析し、明確で詳細なインドネシア語での説明を提供するアプリケーションです。
+
+## 🌟 主な機能
+
+- **AI画像分析:** コンピュータービジョン用の`gemini-2.5-flash`モデルを使用
+- **インドネシア語説明:** 自然で理解しやすい言語での結果分析
+- **シンプルなGUI:** PySimpleGUIを使用したユーザーフレンドリーなインターフェース
+- **ファイルブラウザ:** コンピューターから簡単に画像ファイルを選択
+- **フォーマットサポート:** PNG、JPG、JPEGをサポート
+- **エラーハンドリング:** 情報豊富なエラー管理
+
+## 🎯 使用方法
+
+1. **画像を選択:** 「画像を参照」ボタンをクリックしてファイルエクスプローラーを開く
+2. **ファイルを参照:** コンピューターから画像ファイル（PNG、JPG、JPEG）を選択
+3. **パスを確認:** ファイルパスが入力ボックスに表示される
+4. **分析:** 「説明開始」をクリックして画像を処理
+5. **結果を表示:** 画像の説明が下のテキストエリアに表示される
+
+## ⚙️ インストールとセットアップ
+
+### 1. 前提条件
+- Python 3.6以上
+- アクティブなインターネット接続
+- Google AI Studio APIキー
+
+### 2. フォルダに移動
+```bash
+cd image_describer
+```
+
+### 3. 仮想環境の作成（推奨）
+**仮想環境を作成:**
+```bash
+python -m venv venv
+```
+
+**仮想環境をアクティベート:**
+
+*PowerShell:*
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+*Command Prompt:*
+```cmd
+venv\Scripts\activate.bat
+```
+
+*Git Bash:*
+```bash
+source venv/Scripts/activate
+```
+
+### 4. 依存関係のインストール
+```bash
+pip install -r requirements.txt
+```
+
+**または問題がある場合は手動でインストール:**
+```bash
+pip install google-generativeai Pillow
+pip install --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
+```
+
+### 5. APIキーのセットアップ
+1. [Google AI Studio](https://aistudio.google.com/)を開く
+2. 登録/ログインして無料のAPIキーを取得
+3. `image_describer.py`ファイルを開く
+4. この行を置き換える:
+```python
+API_KEY = "API_KEY_GEMINI_ANDA"  # あなたのAPIキーに置き換え
+```
+
+### 6. アプリケーション実行
+```bash
+python image_describer.py
+```
+
+### 7. 他のツール/フォルダへの切り替え
+<sub><i>💡 初心者向けガイド</i></sub>
+
+アプリケーションの使用終了後、他のツールに切り替えることができます：
+
+**仮想環境を終了:**
+```bash
+deactivate
+```
+
+**メインフォルダに戻る:**
+```bash
+cd ..
+```
+
+**他のツールに移動、例:**
+```bash
+# 三目並べゲーム用
+cd tictactoe
+
+# パックマンゲーム用
+cd pacman
+
+# テキスト記述者（AI）用
+cd text_describer
+```
+
+<sub><i>🔄 新しいツールを実行するには手順3-6を繰り返してください</i></sub>
+
+---
+
+**AIで画像の世界を探索してください！📸✨**
