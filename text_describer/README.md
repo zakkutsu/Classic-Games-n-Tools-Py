@@ -45,10 +45,12 @@ pip install flet google-generativeai Pillow requests
 ### 2. **Setup API Key**
 1. Buka [Google AI Studio](https://aistudio.google.com/)
 2. Daftar/login dan dapatkan API Key gratis
-3. Buka file `text_describer.py`
-4. Ganti baris berikut:
-```python
-API_KEY = "API_KEY_GEMINI_ANDA"  # Ganti dengan API key Anda
+3. Buka file `API-KEY.txt` di folder root project
+4. Ganti API key dengan yang baru:
+```
+API key details
+
+API Key: PASTE_API_KEY_ANDA_DI_SINI
 ```
 
 ### 3. **Jalankan Aplikasi**
@@ -104,11 +106,15 @@ pip install flet google-generativeai Pillow requests
 ### 5. Setup API Key
 1. Buka [Google AI Studio](https://aistudio.google.com/)
 2. Daftar/login dan dapatkan API Key gratis
-3. Buka file `text_describer.py`
-4. Ganti baris berikut:
-```python
-API_KEY = "API_KEY_GEMINI_ANDA"  # Ganti dengan API key Anda
+3. Buka file `API-KEY.txt` di folder root project (`c:\project\Classic-Games-And-Tools-Py\API-KEY.txt`)
+4. Ganti API key dengan yang baru:
 ```
+API key details
+
+API Key: PASTE_API_KEY_ANDA_DI_SINI
+```
+
+**Catatan:** API key disimpan di file terpisah untuk keamanan dan kemudahan update. Satu API key digunakan untuk semua aplikasi dalam project ini.
 
 ### 6. Jalankan Aplikasi
 ```bash
@@ -415,10 +421,12 @@ pip install flet google-generativeai Pillow requests
 ### 2. **Setup API Key**
 1. Open [Google AI Studio](https://aistudio.google.com/)
 2. Register/login and get free API Key
-3. Open `text_describer.py` file
-4. Replace this line:
-```python
-API_KEY = "YOUR_GEMINI_API_KEY"  # Replace with your API key
+3. Open `API-KEY.txt` file in the project root folder
+4. Replace the API key with your new one:
+```
+API key details
+
+API Key: PASTE_YOUR_API_KEY_HERE
 ```
 
 ### 3. **Run Application**
@@ -632,10 +640,12 @@ pip install flet google-generativeai Pillow requests
 ### 2. **APIキーセットアップ**
 1. [Google AI Studio](https://aistudio.google.com/)を開く
 2. 登録/ログインして無料のAPIキーを取得
-3. `text_describer.py`ファイルを開く
-4. この行を置き換える:
-```python
-API_KEY = "YOUR_GEMINI_API_KEY"  # あなたのAPIキーに置き換え
+3. プロジェクトルートフォルダの`API-KEY.txt`ファイルを開く
+4. 新しいAPIキーに置き換える:
+```
+API key details
+
+API Key: ここにAPIキーを貼り付け
 ```
 
 ### 3. **アプリケーション実行**
