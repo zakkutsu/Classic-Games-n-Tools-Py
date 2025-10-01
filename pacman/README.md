@@ -38,15 +38,26 @@ cd pacman
 ```
 
 ### 3. Buat Virtual Environment (Opsional tapi Disarankan)
+**Buat virtual environment:**
 ```bash
-# Buat virtual environment
 python -m venv venv
+```
 
-# Aktifkan di Windows
-.\venv\Scripts\activate
+**Aktifkan virtual environment:**
 
-# Aktifkan di macOS/Linux
-source venv/bin/activate
+*PowerShell:*
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+*Command Prompt:*
+```cmd
+venv\Scripts\activate.bat
+```
+
+*Git Bash:*
+```bash
+source venv/Scripts/activate
 ```
 
 ### 4. Instal Dependensi

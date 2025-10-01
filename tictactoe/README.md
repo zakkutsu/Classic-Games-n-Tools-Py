@@ -1,6 +1,27 @@
 # 🎮 Tic-Tac-Toe Pro
 
-Selamat datang di **Tic-Tac-Toe Pro**! Ini adalah implementasi modern dari game klasik Tic-Tac-Toe dengan antarmuka grafis yang menarik dan AI yang cerdas menggunakan algoritma Minimax.
+Selamat da### 3. Buat Virtual Environment (Disarankan)
+**Buat virtual environment:**
+```bash
+python -m venv venv
+```
+
+**Aktifkan virtual environment:**
+
+*PowerShell:*
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+*Command Prompt:*
+```cmd
+venv\Scripts\activate.bat
+```
+
+*Git Bash:*
+```bash
+source venv/Scripts/activate
+```ic-Tac-Toe Pro**! Ini adalah implementasi modern dari game klasik Tic-Tac-Toe dengan antarmuka grafis yang menarik dan AI yang cerdas menggunakan algoritma Minimax.
 
 ## 🌟 Fitur Utama
 
