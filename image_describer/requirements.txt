@@ -1,4 +1,17 @@
-google-generativeai
-Pillow
+# Requirements untuk Image Describer Flet Versiongoogle-generativeai
+
+# Instalasi: pip install -r requirements.txtPillow
+
 --extra-index-url https://PySimpleGUI.net/install
-PySimpleGUI
+
+# Framework UI ModernPySimpleGUI
+flet>=0.21.0
+
+# AI dan Machine Learning
+google-generativeai>=0.3.0
+
+# Image Processing
+Pillow>=10.0.0
+
+# Utilities
+requests>=2.31.0

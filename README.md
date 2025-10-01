@@ -1,6 +1,19 @@
 # 🚀 Koleksi Proyek Python 🚀
 
-**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
+**🌐 Languages:** [🇮🇩 Bahasa Indo## 📝 Text Describer - Penerjemah Teks AI Modern
+
+Aplikasi penerjemah teks modern yang menggunakan **Google Generative AI (Gemini)** dengan interface **Flet** yang elegan untuk menerjemahkan teks dari berbagai bahasa ke Bahasa Indonesia dengan hasil yang natural.
+
+**Fitur Utama:**
+-   🎨 **Modern UI** dengan dark theme elegan dan responsive design
+-   🚀 **AI Canggih** menggunakan model Gemini 2.5-flash terbaru
+-   📊 **Real-time Statistics** dengan monitoring input/output
+-   ✅ **Smart Validation** dengan visual feedback
+-   🔔 **Modern Notifications** dengan snackbar yang tidak mengganggu
+-   ⚡ **Fast Performance** dengan smooth animations
+-   🧹 **Clear Function** untuk workflow yang efficient
+
+> ➡️ **[Baca dokumentasi lengkap Text Describer](text_describer/README.md)**asa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 
@@ -80,20 +93,23 @@ Aplikasi penerjemah teks yang memanfaatkan **Google Generative AI (Gemini)** unt
 
 ---
 
-## 🖼️ Image Describer - Analisis Gambar AI
+## 🖼️ Image Describer - Analisis Gambar AI Modern
 
-Aplikasi untuk menganalisis dan memberikan deskripsi konten gambar menggunakan **Google Generative AI (Gemini)** dengan hasil dalam Bahasa Indonesia.
+Aplikasi analisis gambar modern yang menggunakan **Google Generative AI (Gemini Vision)** dengan interface **Flet** yang elegan untuk menganalisis dan memberikan deskripsi detail konten gambar dalam Bahasa Indonesia.
 
 **Fitur Utama:**
--   Analisis gambar menggunakan AI computer vision
--   Deskripsi detail dalam Bahasa Indonesia
--   Mendukung format PNG, JPG, JPEG
--   File browser yang mudah digunakan
+-   🎨 **Modern UI** dengan dark theme dan color-coded interface
+-   🔍 **AI Vision Canggih** menggunakan Gemini Vision untuk computer vision
+-   📂 **File Picker Modern** dengan validasi format dan ukuran real-time
+-   📊 **Real-time File Info** monitoring nama, ukuran, dan format file
+-   ✅ **Smart Validation** untuk format PNG, JPG, JPEG, GIF, WebP
+-   ⚡ **Fast Analysis** dengan progress indicator yang smooth
+-   🧹 **Clear Function** untuk reset semua field dengan mudah
 
 > ➡️ **[Baca dokumentasi lengkap Image Describer](image_describer/README.md)**
 
 ## 🏷️ Text Tags
-`Python`, `Pygame`, `Google Gemini AI`, `Computer Vision`, `Text Translation`, `Game Development`, `Artificial Intelligence`, `GUI`, `PySimpleGUI`, `Minimax Algorithm`, `Machine Learning`
+`Python`, `Pygame`, `Flet`, `Google Gemini AI`, `Computer Vision`, `Text Translation`, `Game Development`, `Artificial Intelligence`, `Modern UI`, `Dark Theme`, `Responsive Design`, `Minimax Algorithm`, `Machine Learning`, `AI Vision`, `Real-time Processing`
 
 ## 🎬 Demo Overview
 
@@ -186,7 +202,7 @@ Application for analyzing and providing image content descriptions using **Googl
 > ➡️ **[Read complete Image Describer documentation](image_describer/README.md)**
 
 ## 🏷️ Text Tags
-`Python`, `Pygame`, `Google Gemini AI`, `Computer Vision`, `Text Translation`, `Game Development`, `Artificial Intelligence`, `GUI`, `PySimpleGUI`, `Minimax Algorithm`, `Machine Learning`
+`Python`, `Pygame`, `Flet`, `Google Gemini AI`, `Computer Vision`, `Text Translation`, `Game Development`, `Artificial Intelligence`, `Modern UI`, `Dark Theme`, `Responsive Design`, `Minimax Algorithm`, `Machine Learning`, `AI Vision`, `Real-time Processing`
 
 ## 🎬 Demo Overview
 
@@ -279,7 +295,7 @@ Application for analyzing and providing image content descriptions using **Googl
 > ➡️ **[画像記述者の完全なドキュメントを読む](image_describer/README.md)**
 
 ## 🏷️ テキストタグ
-`Python`, `Pygame`, `Google Gemini AI`, `コンピュータービジョン`, `テキスト翻訳`, `ゲーム開発`, `人工知能`, `GUI`, `PySimpleGUI`, `Minimaxアルゴリズム`, `機械学習`
+`Python`, `Pygame`, `Flet`, `Google Gemini AI`, `コンピュータービジョン`, `テキスト翻訳`, `ゲーム開発`, `人工知能`, `モダンUI`, `ダークテーマ`, `レスポンシブデザイン`, `Minimaxアルゴリズム`, `機械学習`, `AIビジョン`, `リアルタイム処理`
 
 ## 🎬 デモ概要
 

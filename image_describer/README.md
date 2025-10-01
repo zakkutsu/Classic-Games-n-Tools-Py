@@ -1,4 +1,4 @@
-# 🖼️ Image Describer - Deskripsi Gambar AI
+# 🖼️ Image Describer - Analisis Gambar AI Modern
 
 **🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
@@ -6,26 +6,59 @@
 
 ## 🇮🇩 Bahasa Indonesia
 
-Selamat datang di **Image Describer**! Aplikasi yang menggunakan kekuatan **Google Generative AI (Gemini)** untuk menganalisis dan memberikan deskripsi konten gambar dalam Bahasa Indonesia yang jelas dan detail.
+Selamat datang di **Image Describer**! Aplikasi analisis gambar modern yang menggunakan kekuatan **Google Generative AI (Gemini Vision)** dengan interface **Flet** yang elegan untuk menganalisis dan memberikan deskripsi detail konten gambar dalam Bahasa Indonesia.
 
 ## 🌟 Fitur Utama
 
-- **Analisis Gambar AI:** Menggunakan model `gemini-2.5-flash` untuk computer vision
-- **Deskripsi Bahasa Indonesia:** Hasil analisis dalam bahasa yang natural dan mudah dipahami
-- **GUI Sederhana:** Interface yang user-friendly dengan PySimpleGUI
-- **File Browser:** Mudah memilih file gambar dari komputer
-- **Format Support:** Mendukung PNG, JPG, JPEG
-- **Error Handling:** Penanganan error yang informatif
+### 🎨 **Modern UI & UX**
+- **Dark theme elegan** yang nyaman untuk mata
+- **Responsive design** dengan layout yang adaptive  
+- **Color-coded interface:** Purple untuk file picker, Green untuk analisis
+- **Modern typography** dengan emoji dan proper spacing
 
-## 🎯 Cara Menggunakan
+### 🚀 **AI Vision & Performance**
+- **Google Gemini Vision AI** menggunakan model `gemini-2.5-flash` untuk computer vision
+- **Advanced image analysis** dengan deskripsi detail dan informatif
+- **Smart error handling** dengan feedback yang informatif
+- **Fast rendering** dan smooth animations
 
-1. **Pilih Gambar:** Klik tombol "Cari Gambar" untuk membuka file explorer
-2. **Browse File:** Pilih file gambar (PNG, JPG, JPEG) dari komputer Anda
-3. **Konfirmasi Path:** Path file akan muncul di kotak input
-4. **Analisis:** Klik "Mulai Deskripsikan" untuk memproses gambar
-5. **Lihat Hasil:** Deskripsi gambar akan muncul di area teks bawah
+### 📊 **Enhanced Features**
+- **File picker modern:** Dialog file picker yang user-friendly
+- **Real-time file info:** Monitor nama file, ukuran, dan format
+- **Progress indicator:** Visual feedback dengan progress ring
+- **Status tracking:** Real-time status dengan emoji dan warna
+- **File validation:** Validasi format dan ukuran file otomatis
+- **Clear function:** Reset semua field dengan satu klik
+- **Modern notifications:** Snackbar notifications yang tidak mengganggu
 
-## ⚙️ Instalasi dan Setup
+### ✅ **Smart Validation**
+- **Format support:** PNG, JPG, JPEG, GIF, WebP
+- **File size limit:** Maksimal 10MB dengan warning visual
+- **Path validation:** Pengecekan otomatis untuk file yang valid
+- **Error feedback:** Pesan error yang jelas dan actionable
+
+## 🚀 Quick Start
+
+### 1. **Instalasi Cepat**
+```bash
+pip install flet google-generativeai Pillow requests
+```
+
+### 2. **Setup API Key**
+1. Buka [Google AI Studio](https://aistudio.google.com/)
+2. Daftar/login dan dapatkan API Key gratis
+3. Buka file `image_describer.py`
+4. Ganti baris berikut:
+```python
+API_KEY = "API_KEY_GEMINI_ANDA"  # Ganti dengan API key Anda
+```
+
+### 3. **Jalankan Aplikasi**
+```bash
+python image_describer.py
+```
+
+## ⚙️ Instalasi dan Setup Lengkap
 
 ### 1. Prasyarat
 - Python 3.6 atau lebih baru
@@ -65,10 +98,9 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-**Atau instal manual jika ada masalah:**
+**Atau instal manual:**
 ```bash
-pip install google-generativeai Pillow
-pip install --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
+pip install flet google-generativeai Pillow requests
 ```
 
 ### 5. Setup API Key
@@ -102,382 +134,442 @@ cd ..
 
 **Pindah ke tool lain, contoh:**
 ```bash
+# Untuk Text Describer (AI)
+cd text_describer
+
 # Untuk game Tic-Tac-Toe
 cd tictactoe
 
 # Untuk game Pac-Man
 cd pacman
-
-# Untuk Text Describer (AI)
-cd text_describer
 ```
 
 <sub><i>🔄 Ulangi langkah 3-6 untuk menjalankan tool yang baru</i></sub>
 
+## 🎯 Cara Menggunakan
+
+### **Interface Modern**
+1. **Header Section:** Title dan info aplikasi dengan styling elegan
+2. **File Section:** Path display dan file picker dengan validasi real-time
+3. **Action Section:** Tombol analisis dengan progress indicator
+4. **Statistics Panel:** Real-time monitoring file info dan status
+5. **Output Section:** Text field untuk hasil analisis detail
+6. **Control Section:** Tombol clear dan info panel
+
+### **Workflow Penggunaan**
+1. **Pilih Gambar:** Klik tombol "📂 Pilih Gambar" untuk membuka file picker
+2. **Validasi File:** Sistem otomatis validasi format dan ukuran file
+3. **Monitor Info:** Lihat informasi file (nama, ukuran, format) di panel
+4. **Analisis:** Klik tombol "🔍 Analisis Gambar"
+5. **Visual Feedback:** Progress ring muncul, status berubah ke "Memproses..."
+6. **Hasil:** Deskripsi detail muncul dengan notification sukses
+7. **Clear (Optional):** Gunakan tombol "🗑️ Bersihkan" untuk reset
+
 ## 🏷️ Text Tags
-`Python`, `Google Gemini AI`, `Computer Vision`, `Image Recognition`, `PySimpleGUI`, `PIL`, `Machine Learning`, `Artificial Intelligence`, `Visual AI`, `Image Processing`
+`Python`, `Flet`, `Google Gemini Vision AI`, `Computer Vision`, `Image Analysis`, `Modern UI`, `Dark Theme`, `AI`, `Machine Learning`, `Image Processing`, `OCR`, `Visual Recognition`, `Responsive Design`
 
 ## 🎬 Demo
 
-### Skenario Penggunaan:
-1. **Application Launch:** User membuka aplikasi dengan interface file browser
-2. **Image Selection:**
-   - User klik "Cari Gambar" → File dialog terbuka
-   - Navigate ke folder Pictures, pilih foto sunset di pantai (beach_sunset.jpg)
-   - File path muncul: "C:\Users\...\Pictures\beach_sunset.jpg"
-3. **Analysis Process:**
-   - User klik "Mulai Deskripsikan"
-   - Status berubah: "Sedang memproses..." dengan progress indicator
-   - Google Gemini Vision API menganalisis gambar (≈3-5 detik)
-4. **Detailed Results:**
-   ```
-   "Ini adalah gambar pemandangan pantai yang menakjubkan saat matahari 
-   terbenam. Langit berwarna orange dan pink yang dramatis memantulkan 
-   cahaya ke permukaan air laut yang tenang. Di latar depan terlihat 
-   siluet pohon kelapa yang melengkung, menciptakan frame alami. 
-   Beberapa awan tipis tersebar di langit, menambah kedalaman visual. 
-   Suasana terlihat sangat damai dan romantis, typical dari golden hour 
-   di daerah tropis."
-   ```
-5. **Multiple Tests:**
-   - **Pet Photo:** "Seekor kucing oren berbulu panjang sedang tidur nyenyak..."
-   - **Food Image:** "Sepiring nasi goreng yang menggugah selera dengan telur mata sapi..."
-   - **Architecture:** "Bangunan modern dengan desain minimalis dan kaca reflektif..."
+### **Skenario Penggunaan Lengkap:**
 
-### Capabilities Showcase:
-- **Object Detection:** Identifies main subjects, backgrounds, and details
-- **Color Analysis:** Recognizes color schemes and lighting conditions
-- **Context Understanding:** Understands scenes, moods, and environments
-- **Cultural Awareness:** Describes with Indonesian cultural context
-- **Technical Details:** Notes photography aspects like composition and lighting
-- **Emotion Recognition:** Captures mood and atmosphere of images
+#### 1. **Modern App Launch**
+- User membuka aplikasi dan melihat interface dark theme yang elegan
+- Header menampilkan "🖼️ Image Describer AI - Modern Edition"
+- Layout responsif dengan file picker yang modern
+
+#### 2. **File Selection Process**
+- User klik tombol "📂 Pilih Gambar" dengan styling purple yang menarik
+- Dialog file picker muncul dengan filter untuk format gambar
+- User memilih foto landscape pemandangan gunung (landscape.jpg, 2.3MB)
+
+#### 3. **Real-time File Validation**
+- File path ditampilkan di text field: `C:\Users\Photos\landscape.jpg`
+- File info update: "📄 landscape.jpg | 📏 2.30 MB | 🔧 .JPG"
+- Statistics panel update: "Format: .JPG | 2.3MB"
+- Tombol "🔍 Analisis Gambar" menjadi aktif (hijau)
+
+#### 4. **Modern Analysis Process**
+- User klik tombol "🔍 Analisis Gambar" dengan hover effects
+- Progress ring muncul dengan smooth animation
+- Text berubah: "Sedang menganalisis gambar..."
+- Status panel: "Memproses..." dengan warna orange
+- UI tetap responsive, tidak freeze
+
+#### 5. **Detailed AI Analysis Results**
+- Green snackbar notification: "✅ Analisis gambar berhasil!"
+- Hasil analisis detail muncul:
+```
+"Gambar ini menampilkan pemandangan gunung yang menakjubkan dengan puncak yang tertutup salju. 
+Di latar depan terdapat danau yang tenang dengan permukaan air yang memantulkan bayangan gunung. 
+Langit berwarna biru cerah dengan awan putih yang bergerak, menciptakan kontras yang indah 
+dengan warna hijau pepohonan di sekitar danau. Komposisi foto ini sangat seimbang dengan 
+penggunaan rule of thirds yang baik. Pencahayaan alami memberikan nuansa yang hangat dan 
+menenangkan, menghadirkan suasana yang damai dan menyegarkan mata."
+```
+
+#### 6. **Enhanced Result Display**
+- Status panel: "✅ Berhasil" dengan warna hijau
+- Output info: "✅ Analisis selesai | 487 karakter"
+- Result length monitoring untuk tracking productivity
+- Hasil deskripsi yang natural dengan detail yang komprehensif
+
+#### 7. **Advanced Features Demo**
+- **File Validation:** User coba upload file .txt → error message "Format file tidak didukung"
+- **Size Validation:** User coba upload file 15MB → warning "Ukuran file terlalu besar"
+- **Clear Function:** User klik "🗑️ Bersihkan" → semua field reset dengan smooth transition
+- **Error Recovery:** Jika API error → red snackbar dengan troubleshooting tips
+
+### **Fitur Interaktif:**
+- **Smart File Picker:** Filter otomatis untuk format gambar yang didukung
+- **Real-time Validation:** Validasi file format dan size dengan visual feedback
+- **Progressive Enhancement:** UI yang merespons setiap tahap proses
+- **Error Recovery:** Actionable error messages dengan solusi yang jelas
+- **Detailed Analysis:** Deskripsi yang comprehensive dan informatif
+- **Responsive Design:** Adaptive layout untuk berbagai screen size
 
 ## 📋 Dependencies
 
 File `requirements.txt` berisi:
 ```
-google-generativeai
-Pillow
-PySimpleGUI
+flet>=0.21.0
+google-generativeai>=0.3.0
+Pillow>=10.0.0
+requests>=2.31.0
 ```
 
 ## 🔧 Fitur Teknis
 
-### Format Gambar Didukung
-- **PNG:** Portable Network Graphics
-- **JPG/JPEG:** Joint Photographic Experts Group
-- **Transparansi:** Mendukung gambar dengan background transparan
+### **Modern Architecture**
+- **Flet Framework:** Cross-platform modern UI framework
+- **Event-driven:** Reactive programming dengan callback functions
+- **Component-based:** Modular UI components dengan proper separation
+- **State Management:** Efficient state updates dengan page.update()
 
-### AI Model
-- **Model:** gemini-2.5-flash (optimal untuk computer vision)
-- **Analisis:** Deteksi objek, pemandangan, aktivitas, warna, dan konteks
-- **Bahasa:** Output dalam Bahasa Indonesia yang natural
+### **Computer Vision Integration**
+- **Model:** gemini-2.5-flash dengan vision capabilities
+- **Image Processing:** PIL/Pillow untuk preprocessing dan validation
+- **Format Support:** PNG, JPG, JPEG, GIF, WebP
+- **Size Optimization:** Smart file size validation (max 10MB)
 
-### GUI Features
-- **File Browser:** Dialog pemilihan file yang mudah
-- **Status Feedback:** Indikator "Sedang memproses..." saat analisis
-- **Responsive Text:** Area hasil yang dapat di-scroll untuk deskripsi panjang
-- **Dark Theme:** Tema gelap yang nyaman untuk mata
+### **AI Analysis Features**
+- **Detailed Description:** Comprehensive object dan scene analysis
+- **Color Analysis:** Color composition dan visual elements
+- **Activity Recognition:** Scene context dan situation analysis
+- **Technical Details:** Format, composition, dan artistic elements
+
+### **Performance Optimizations**
+- **Lazy Loading:** Components dimuat sesuai kebutuhan
+- **Efficient Image Handling:** Optimized image loading dan processing
+- **Memory Management:** Proper cleanup dan resource management
+- **Responsive File Operations:** Non-blocking file operations
+
+### **UI/UX Features**
+- **Dark Theme:** Modern dark theme yang konsisten
+- **Color System:** Systematic color coding (Purple: files, Green: analysis)
+- **File Picker Integration:** Native file picker dengan proper filtering
+- **Progress Feedback:** Real-time progress indicators
+- **Error Visualization:** Color-coded error states dan recovery
 
 ## 💡 Tips Penggunaan
 
-1. **Kualitas Gambar:** Gambar dengan resolusi tinggi memberikan analisis lebih detail
-2. **Pencahayaan:** Gambar dengan pencahayaan baik menghasilkan deskripsi lebih akurat
-3. **Objek Jelas:** Pastikan objek utama dalam gambar terlihat jelas
-4. **Context:** AI dapat mengenali konteks dan situasi dalam gambar
+### **Optimal Usage**
+1. **File Quality:** Gunakan gambar dengan resolusi yang baik untuk analisis terbaik
+2. **Format Preference:** JPG/PNG memberikan hasil analisis yang optimal
+3. **File Size:** Gambar 1-5MB memberikan balance antara quality dan speed
+4. **Content Types:** AI dapat menganalisis landscape, objects, people, text dalam gambar
 
-## 🔍 Contoh Hasil Analisis
-
-### Foto Pemandangan
-*"Ini adalah gambar pemandangan gunung yang indah dengan langit biru cerah. Terlihat puncak gunung tertutup salju putih di kejauhan, dengan pepohonan hijau di latar depan."*
-
-### Foto Hewan
-*"Gambar menunjukkan seekor kucing oranye yang sedang tidur nyenyak di atas sofa berwarna abu-abu. Kucing tersebut tampak sangat tenang dan nyaman."*
-
-### Foto Makanan
-*"Ini adalah foto sepiring nasi goreng yang terlihat lezat dengan telur mata sapi di atasnya, dilengkapi dengan irisan mentimun dan tomat sebagai garnish."*
+### **Advanced Features**
+1. **Batch Analysis:** Gunakan clear function untuk workflow yang efficient
+2. **Error Recovery:** Perhatikan color-coded feedback untuk troubleshooting
+3. **Performance:** Monitor file size untuk optimal processing speed
+4. **Quality:** Gambar yang clear dan well-lit memberikan analisis yang lebih detail
 
 ## 🛠️ Troubleshooting
 
-### Error File Tidak Ditemukan
-- Pastikan file gambar masih ada di lokasi yang dipilih
-- Coba pilih ulang file gambar
-- Periksa format file (harus PNG, JPG, atau JPEG)
+### **Common Issues**
 
-### Error API Key
-- Pastikan API key sudah benar dan aktif
-- Cek koneksi internet
-- Verifikasi quota API belum habis
+#### **API Key Errors**
+- **Symptom:** Error dialog saat launch
+- **Solution:** Verify API key di Google AI Studio, check internet connection
+- **Prevention:** Test API key sebelum deployment
 
-### Error Analisis Gambar
-- Pastikan file gambar tidak corrupt
-- Coba dengan gambar yang lebih kecil (< 10MB)
-- Periksa format file yang didukung
+#### **File Format Issues**
+- **Symptom:** "Format file tidak didukung" message
+- **Solution:** Gunakan format PNG, JPG, JPEG, GIF, atau WebP
+- **Recovery:** Convert file ke format yang didukung
 
-### Deskripsi Tidak Akurat
-- Gunakan gambar dengan kualitas lebih baik
-- Pastikan objek dalam gambar terlihat jelas
-- Coba dengan pencahayaan yang lebih baik
+#### **File Size Issues**
+- **Symptom:** "Ukuran file terlalu besar" warning
+- **Solution:** Compress image atau gunakan file < 10MB
+- **Optimization:** Resize image maintain aspect ratio
 
-## 🔧 Pengembangan
+#### **Analysis Quality**
+- **Symptom:** Deskripsi yang kurang detail
+- **Solution:** Gunakan gambar dengan resolusi dan lighting yang baik
+- **Enhancement:** Pilih gambar dengan content yang jelas dan fokus
 
-### Struktur Kode
-- **Konfigurasi API:** Setup Google Generative AI
-- **Fungsi describe_image():** Core logic analisis gambar
-- **GUI Layout:** Interface PySimpleGUI dengan file browser
-- **Event Loop:** Handling user interaction dan file selection
+### **Advanced Debugging**
+- **UI Issues:** Check Flet version compatibility
+- **API Issues:** Monitor API quotas dan rate limits  
+- **Performance:** Use system monitor untuk resource usage
+- **Image Issues:** Validate image integrity dengan image viewers
 
-### Customization
-Anda dapat memodifikasi:
-- **Model AI:** Ganti ke model Gemini lainnya
-- **Prompt:** Customize prompt untuk analisis spesifik
-- **File Types:** Tambah dukungan format file lain
-- **Theme:** Ubah tema dan layout GUI
+## 🔧 Customization & Development
 
-## 🚀 Pengembangan Lanjutan
+### **Theme Customization**
+```python
+# Ubah theme mode
+page.theme_mode = ft.ThemeMode.LIGHT  # atau DARK, SYSTEM
 
-### Fitur Potensial
-- **Batch Processing:** Analisis multiple gambar sekaligus
-- **Export Results:** Simpan hasil analisis ke file
-- **Image Filters:** Pre-processing untuk meningkatkan akurasi
-- **Advanced Prompts:** Analisis spesifik (objek counting, color analysis, dll)
+# Custom colors
+page.bgcolor = ft.colors.GREY_900
+```
 
-## 📝 Lisensi
+### **Window Customization**
+```python
+# Ukuran window
+page.window_width = 800
+page.window_height = 1000
 
-Proyek ini dibuat untuk tujuan edukasi dan pengembangan. Silakan gunakan dan modifikasi sesuai kebutuhan.
+# Window properties
+page.window_resizable = True
+page.window_maximizable = True
+```
+
+### **Analysis Customization**
+```python
+# Custom prompt untuk analisis
+custom_prompt = """
+Analisis gambar ini secara detail dalam Bahasa Indonesia.
+Fokus pada: objek utama, komposisi warna, aktivitas yang terjadi.
+"""
+
+# File size limit
+MAX_FILE_SIZE = 15 * 1024 * 1024  # 15MB
+```
+
+## � Pengembangan Lanjutan
+
+### **Fitur Potensial**
+- **Batch Processing:** Analisis multiple gambar sekaligus dengan queue system
+- **Export Results:** Simpan hasil analisis ke file (TXT, PDF, JSON)
+- **Image Filters:** Pre-processing untuk meningkatkan akurasi (contrast, brightness, noise reduction)
+- **Advanced Prompts:** Analisis spesifik (object counting, color analysis, text recognition, scene understanding)
+- **Comparison Mode:** Bandingkan analisis dari multiple gambar
+- **Image History:** Database lokal untuk menyimpan hasil analisis sebelumnya
+- **Custom Templates:** Template prompt yang bisa disesuaikan untuk kebutuhan spesifik
+- **OCR Integration:** Extract dan translate text dari gambar
+- **Image Enhancement:** Auto-enhance gambar sebelum analisis
+- **Multi-language Output:** Hasil analisis dalam berbagai bahasa
+
+### **Improvements yang Direncanakan**
+- **Performance Optimization:** Image compression dan caching untuk file besar
+- **Cloud Storage Integration:** Upload dan analisis dari cloud services (Google Drive, Dropbox)
+- **AI Model Selection:** Pilihan multiple AI models untuk analisis berbeda
+- **Annotation Tools:** Markup tools untuk highlight area specific dalam gambar
+- **Report Generation:** Generate comprehensive reports dengan charts dan statistics
+- **API Integration:** RESTful API untuk integration dengan aplikasi lain
+- **Mobile Companion:** Companion mobile app untuk capture dan sync
+- **Real-time Camera:** Live camera feed analysis dengan real-time description
+
+### **Technical Roadmap**
+- **Database Integration:** SQLite untuk menyimpan metadata dan results
+- **Image Processing Pipeline:** Advanced preprocessing dengan OpenCV
+- **Machine Learning Enhancement:** Custom model training untuk domain-specific analysis
+- **Microservices Architecture:** Scalable backend dengan containerization
+- **WebSocket Integration:** Real-time updates untuk collaborative analysis
+- **Testing Framework:** Automated testing dengan pytest dan image fixtures
+- **Documentation Generator:** Auto-generate API docs dan user guides
+
+## �📝 Lisensi
+
+Proyek ini dibuat untuk tujuan edukasi dan pengembangan. Silakan gunakan dan modifikasi sesuai kebutuhan dengan tetap mencantumkan credit yang appropriate.
 
 ---
 
-**Jelajahi dunia gambar dengan AI! 📸✨**
+**Nikmati pengalaman analisis gambar dengan AI modern! 🚀**
 
 ---
 
 ## 🇺🇸 English
 
-Welcome to **Image Describer**! An application that uses the power of **Google Generative AI (Gemini)** to analyze and provide image content descriptions in clear and detailed Indonesian.
+Welcome to **Image Describer**! A modern image analysis application that uses the power of **Google Generative AI (Gemini Vision)** with an elegant **Flet** interface to analyze and provide detailed descriptions of image content in Indonesian.
 
 ## 🌟 Key Features
 
-- **AI Image Analysis:** Uses `gemini-2.5-flash` model for computer vision
-- **Indonesian Descriptions:** Results analysis in natural and easy-to-understand language
-- **Simple GUI:** User-friendly interface with PySimpleGUI
-- **File Browser:** Easy image file selection from computer
-- **Format Support:** Supports PNG, JPG, JPEG
-- **Error Handling:** Informative error management
+### 🎨 **Modern UI & UX**
+- **Elegant dark theme** that's comfortable for the eyes
+- **Responsive design** with adaptive layout
+- **Color-coded interface:** Purple for file picker, Green for analysis
+- **Modern typography** with emojis and proper spacing
 
-## 🎯 How to Use
+### 🚀 **AI Vision & Performance**
+- **Google Gemini Vision AI** using `gemini-2.5-flash` model for computer vision
+- **Advanced image analysis** with detailed and informative descriptions
+- **Smart error handling** with informative feedback
+- **Fast rendering** and smooth animations
 
-1. **Select Image:** Click "Browse Image" button to open file explorer
-2. **Browse File:** Select image file (PNG, JPG, JPEG) from your computer
-3. **Confirm Path:** File path will appear in input box
-4. **Analyze:** Click "Start Describing" to process image
-5. **View Results:** Image description will appear in bottom text area
+### 📊 **Enhanced Features**
+- **Modern file picker:** User-friendly file picker dialog
+- **Real-time file info:** Monitor file name, size, and format
+- **Progress indicator:** Visual feedback with progress ring
+- **Status tracking:** Real-time status with emojis and colors
+- **File validation:** Automatic format and size validation
+- **Clear function:** Reset all fields with one click
+- **Modern notifications:** Non-intrusive snackbar notifications
 
-## ⚙️ Installation and Setup
+## 🚀 Quick Start
 
-### 1. Prerequisites
-- Python 3.6 or newer
-- Active internet connection
-- Google AI Studio API Key
-
-### 2. Navigate to Folder
+### 1. **Quick Installation**
 ```bash
-cd image_describer
+pip install flet google-generativeai Pillow requests
 ```
 
-### 3. Create Virtual Environment (Recommended)
-**Create virtual environment:**
-```bash
-python -m venv venv
-```
-
-**Activate virtual environment:**
-
-*PowerShell:*
-```powershell
-.\venv\Scripts\Activate.ps1
-```
-
-*Command Prompt:*
-```cmd
-venv\Scripts\activate.bat
-```
-
-*Git Bash:*
-```bash
-source venv/Scripts/activate
-```
-
-### 4. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-**Or install manually if there are issues:**
-```bash
-pip install google-generativeai Pillow
-pip install --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
-```
-
-### 5. Setup API Key
+### 2. **Setup API Key**
 1. Open [Google AI Studio](https://aistudio.google.com/)
 2. Register/login and get free API Key
 3. Open `image_describer.py` file
 4. Replace this line:
 ```python
-API_KEY = "API_KEY_GEMINI_ANDA"  # Replace with your API key
+API_KEY = "YOUR_GEMINI_API_KEY"  # Replace with your API key
 ```
 
-### 6. Run Application
+### 3. **Run Application**
 ```bash
 python image_describer.py
 ```
 
-### 7. Switch to Other Tools/Folders
-<sub><i>💡 Guide for beginners</i></sub>
+## 🎯 How to Use
 
-After finishing using the application, you can switch to other tools:
+### **Modern Interface**
+1. **Header Section:** Title and app info with elegant styling
+2. **File Section:** Path display and file picker with real-time validation
+3. **Action Section:** Analysis button with progress indicator
+4. **Statistics Panel:** Real-time file info and status monitoring
+5. **Output Section:** Text field for detailed analysis results
+6. **Control Section:** Clear button and info panel
 
-**Exit virtual environment:**
-```bash
-deactivate
-```
+### **Usage Workflow**
+1. **Select Image:** Click "📂 Select Image" to open file picker
+2. **File Validation:** System automatically validates format and file size
+3. **Monitor Info:** See file information (name, size, format) in panel
+4. **Analyze:** Click "🔍 Analyze Image" button
+5. **Visual Feedback:** Progress ring appears, status changes to "Processing..."
+6. **Results:** Detailed description appears with success notification
+7. **Clear (Optional):** Use "🗑️ Clear" button to reset
 
-**Return to main folder:**
-```bash
-cd ..
-```
+## 🚀 **Advanced Development**
 
-**Move to other tools, example:**
-```bash
-# For Tic-Tac-Toe game
-cd tictactoe
+### **Potential Features**
+- **Batch Processing:** Analyze multiple images simultaneously with queue system
+- **Export Results:** Save analysis results to files (TXT, PDF, JSON)
+- **Image Filters:** Pre-processing to improve accuracy (contrast, brightness, noise reduction)
+- **Advanced Prompts:** Specific analysis (object counting, color analysis, text recognition, scene understanding)
+- **Comparison Mode:** Compare analysis from multiple images
+- **Image History:** Local database to store previous analysis results
+- **Custom Templates:** Customizable prompt templates for specific needs
+- **OCR Integration:** Extract and translate text from images
+- **Image Enhancement:** Auto-enhance images before analysis
+- **Multi-language Output:** Analysis results in various languages
 
-# For Pac-Man game
-cd pacman
-
-# For Text Describer (AI)
-cd text_describer
-```
-
-<sub><i>🔄 Repeat steps 3-6 to run the new tool</i></sub>
+### **Planned Improvements**
+- **Performance Optimization:** Image compression and caching for large files
+- **Cloud Storage Integration:** Upload and analyze from cloud services (Google Drive, Dropbox)
+- **AI Model Selection:** Multiple AI models selection for different analysis
+- **Annotation Tools:** Markup tools to highlight specific areas in images
+- **Report Generation:** Generate comprehensive reports with charts and statistics
+- **API Integration:** RESTful API for integration with other applications
+- **Mobile Companion:** Companion mobile app for capture and sync
+- **Real-time Camera:** Live camera feed analysis with real-time description
 
 ---
 
-**Explore the world of images with AI! 📸✨**
+**Enjoy analyzing images with modern AI! 🚀**
 
 ---
 
 ## 🇯🇵 日本語
 
-**画像記述者**へようこそ！**Google Generative AI (Gemini)**の力を使用して画像コンテンツを分析し、明確で詳細なインドネシア語での説明を提供するアプリケーションです。
+**画像記述者**へようこそ！**Google Generative AI (Gemini Vision)**の力とエレガントな**Flet**インターフェースを使用して、画像内容を詳細に分析し、インドネシア語で説明を提供するモダンな画像分析アプリケーションです。
 
 ## 🌟 主な機能
 
-- **AI画像分析:** コンピュータービジョン用の`gemini-2.5-flash`モデルを使用
-- **インドネシア語説明:** 自然で理解しやすい言語での結果分析
-- **シンプルなGUI:** PySimpleGUIを使用したユーザーフレンドリーなインターフェース
-- **ファイルブラウザ:** コンピューターから簡単に画像ファイルを選択
-- **フォーマットサポート:** PNG、JPG、JPEGをサポート
-- **エラーハンドリング:** 情報豊富なエラー管理
+### 🎨 **モダンUI & UX**
+- **エレガントなダークテーマ** - 目に優しい
+- **レスポンシブデザイン** - 適応的なレイアウト
+- **カラーコード化されたインターフェース:** ファイルピッカー（紫）、分析（緑）
+- **モダンタイポグラフィ** - 絵文字と適切なスペーシング
 
-## 🎯 使用方法
+### 🚀 **AI Vision & パフォーマンス**
+- **Google Gemini Vision AI** - コンピュータビジョン用`gemini-2.5-flash`モデルを使用
+- **高度な画像分析** - 詳細で情報豊富な説明
+- **スマートエラーハンドリング** - 情報豊富なフィードバック
+- **高速レンダリング** - スムーズなアニメーション
 
-1. **画像を選択:** 「画像を参照」ボタンをクリックしてファイルエクスプローラーを開く
-2. **ファイルを参照:** コンピューターから画像ファイル（PNG、JPG、JPEG）を選択
-3. **パスを確認:** ファイルパスが入力ボックスに表示される
-4. **分析:** 「説明開始」をクリックして画像を処理
-5. **結果を表示:** 画像の説明が下のテキストエリアに表示される
+## 🚀 クイックスタート
 
-## ⚙️ インストールとセットアップ
-
-### 1. 前提条件
-- Python 3.6以上
-- アクティブなインターネット接続
-- Google AI Studio APIキー
-
-### 2. フォルダに移動
+### 1. **クイックインストール**
 ```bash
-cd image_describer
+pip install flet google-generativeai Pillow requests
 ```
 
-### 3. 仮想環境の作成（推奨）
-**仮想環境を作成:**
-```bash
-python -m venv venv
-```
-
-**仮想環境をアクティベート:**
-
-*PowerShell:*
-```powershell
-.\venv\Scripts\Activate.ps1
-```
-
-*Command Prompt:*
-```cmd
-venv\Scripts\activate.bat
-```
-
-*Git Bash:*
-```bash
-source venv/Scripts/activate
-```
-
-### 4. 依存関係のインストール
-```bash
-pip install -r requirements.txt
-```
-
-**または問題がある場合は手動でインストール:**
-```bash
-pip install google-generativeai Pillow
-pip install --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
-```
-
-### 5. APIキーのセットアップ
+### 2. **APIキーセットアップ**
 1. [Google AI Studio](https://aistudio.google.com/)を開く
 2. 登録/ログインして無料のAPIキーを取得
 3. `image_describer.py`ファイルを開く
 4. この行を置き換える:
 ```python
-API_KEY = "API_KEY_GEMINI_ANDA"  # あなたのAPIキーに置き換え
+API_KEY = "YOUR_GEMINI_API_KEY"  # あなたのAPIキーに置き換え
 ```
 
-### 6. アプリケーション実行
+### 3. **アプリケーション実行**
 ```bash
 python image_describer.py
 ```
 
-### 7. 他のツール/フォルダへの切り替え
-<sub><i>💡 初心者向けガイド</i></sub>
+## 🎯 使用方法
 
-アプリケーションの使用終了後、他のツールに切り替えることができます：
+### **モダンインターフェース**
+1. **ヘッダーセクション:** エレガントなスタイリングのタイトルとアプリ情報
+2. **ファイルセクション:** リアルタイム検証付きのパス表示とファイルピッカー
+3. **アクションセクション:** プログレスインジケータ付き分析ボタン
+4. **統計パネル:** リアルタイムファイル情報とステータス監視
+5. **出力セクション:** 詳細分析結果用のテキストフィールド
+6. **コントロールセクション:** クリアボタンと情報パネル
 
-**仮想環境を終了:**
-```bash
-deactivate
-```
+### **使用ワークフロー**
+1. **画像選択:** 「📂 画像を選択」をクリックしてファイルピッカーを開く
+2. **ファイル検証:** システムが自動的に形式とファイルサイズを検証
+3. **情報監視:** パネルでファイル情報（名前、サイズ、形式）を確認
+4. **分析:** 「🔍 画像分析」ボタンをクリック
+5. **視覚的フィードバック:** プログレスリングが表示され、ステータスが「処理中...」に変更
+6. **結果:** 成功通知と共に詳細な説明が表示
+7. **クリア（オプション）:** 「🗑️ クリア」ボタンを使用してリセット
 
-**メインフォルダに戻る:**
-```bash
-cd ..
-```
+## 🚀 **高度な開発**
 
-**他のツールに移動、例:**
-```bash
-# 三目並べゲーム用
-cd tictactoe
+### **潜在的な機能**
+- **バッチ処理:** キューシステムによる複数画像の同時分析
+- **結果エクスポート:** 分析結果をファイル（TXT、PDF、JSON）に保存
+- **画像フィルター:** 精度向上のための前処理（コントラスト、明度、ノイズ除去）
+- **高度なプロンプト:** 特定分析（オブジェクト計数、色分析、テキスト認識、シーン理解）
+- **比較モード:** 複数画像からの分析比較
+- **画像履歴:** 以前の分析結果を保存するローカルデータベース
+- **カスタムテンプレート:** 特定ニーズ用のカスタマイズ可能なプロンプトテンプレート
+- **OCR統合:** 画像からのテキスト抽出と翻訳
+- **画像強化:** 分析前の自動画像強化
+- **多言語出力:** 様々な言語での分析結果
 
-# パックマンゲーム用
-cd pacman
-
-# テキスト記述者（AI）用
-cd text_describer
-```
-
-<sub><i>🔄 新しいツールを実行するには手順3-6を繰り返してください</i></sub>
+### **計画された改善**
+- **パフォーマンス最適化:** 大きなファイル用の画像圧縮とキャッシュ
+- **クラウドストレージ統合:** クラウドサービス（Google Drive、Dropbox）からのアップロードと分析
+- **AIモデル選択:** 異なる分析用の複数AIモデル選択
+- **注釈ツール:** 画像内の特定エリアをハイライトするマークアップツール
+- **レポート生成:** チャートと統計を含む包括的レポートの生成
+- **API統合:** 他のアプリケーションとの統合用RESTful API
+- **モバイルコンパニオン:** キャプチャと同期用のコンパニオンモバイルアプリ
+- **リアルタイムカメラ:** リアルタイム説明付きライブカメラフィード分析
 
 ---
 
-**AIで画像の世界を探索してください！📸✨**
+**モダンなAIでの画像分析をお楽しみください！🚀**

@@ -1,118 +1,202 @@
+import flet as ft
 import google.generativeai as genai
-import PySimpleGUI as sg
-import textwrap # Library untuk memotong teks jika terlalu panjang
+import textwrap
 
 # --- KONFIGURASI PENTING ---
-# GANTI TULISAN "YOUR_API_KEY_HERE" DENGAN KUNCI API YANG SUDAH ANDA SALIN.
-# Pastikan Anda mendapatkan kunci API dari Google AI Studio.
-API_KEY = "API_KEY_GEMINI_ANDA" 
-
-# Batas maksimal karakter yang diizinkan
+API_KEY = "AIzaSyDbB8HqNcMPgNv2Jgg8jGCLpKRzJa4e3rs"  # API Key Gemini
 MAX_CHARS = 100000
+MODEL_NAME = "gemini-2.5-flash"
 
 # Konfigurasi model AI Google
 try:
     genai.configure(api_key=API_KEY)
-    # Menggunakan model 'gemini-2.5-flash' yang efisien untuk tugas teks
-    model = genai.GenerativeModel('gemini-2.5-flash') 
+    model = genai.GenerativeModel(MODEL_NAME)
+    API_CONFIGURED_SUCCESSFULLY = True
 except Exception as e:
-    sg.popup_error(f"Error Konfigurasi API: {e}\n\nPastikan API Key Anda sudah benar dan koneksi internet aktif.")
-    exit()
+    API_CONFIGURED_SUCCESSFULLY = False
+    API_ERROR_MESSAGE = f"Error Konfigurasi API: {e}\n\nPastikan API Key Anda sudah benar dan koneksi internet aktif."
 
-# --- FUNGSI UTAMA ---
 def translate_text(text_to_translate):
     """Mengirim teks ke AI dan mendapatkan terjemahan ke Bahasa Indonesia."""
     if not text_to_translate.strip():
         return "Error: Tidak ada teks untuk diterjemahkan."
     
-    # Memastikan teks tidak melebihi batas API (sebagai pengaman tambahan)
     if len(text_to_translate) > MAX_CHARS:
         return f"Error: Teks melebihi batas maksimal {MAX_CHARS} karakter."
-
+    
     try:
-        # Prompt yang jelas untuk AI agar fokus pada terjemahan
         prompt = f"""
         Translate the following text into clear and natural-sounding Indonesian.
         Provide only the translated text as the result, without any additional comments, explanations, or introductions.
-
+        
         --- TEXT TO TRANSLATE ---
         {text_to_translate}
         --- END OF TEXT ---
         """
         
-        # Kirim prompt ke model AI
         response = model.generate_content(prompt)
-        
         return response.text
     except Exception as e:
-        # Memberikan pesan error yang lebih informatif
         error_message = str(e)
-        # Memotong pesan error jika terlalu panjang agar muat di popup
         wrapped_error = "\n".join(textwrap.wrap(error_message, 80))
         return f"Terjadi kesalahan saat menghubungi API:\n\n{wrapped_error}"
 
-# --- TAMPILAN APLIKASI (GUI) ---
-sg.theme('DarkBlue3')
-
-# Ukuran diperkecil sekitar 20% (dari 80x15 menjadi 64x12)
-layout = [
-    [sg.Text("Text Translator", font=('Helvetica', 14))], # Font sedikit diperkecil
-    [sg.Text("Masukkan teks yang ingin diterjemahkan ke Bahasa Indonesia:")],
-    [sg.Multiline(size=(64, 12), key='-INPUT_TEXT-', enable_events=True)], # Ukuran diperkecil
-    [sg.Text(f"0 / {MAX_CHARS}", key='-CHAR_COUNT-', size=(20, 1))],
-    [sg.Button("Terjemahkan", key='-SUBMIT-'), sg.Button("Keluar")],
-    [sg.HorizontalSeparator()],
-    [sg.Text("Hasil Terjemahan:", font=('Helvetica', 11))], # Font sedikit diperkecil
-    [sg.Multiline(size=(64, 12), key='-OUTPUT-', disabled=True)], # Ukuran diperkecil
-    [sg.Text("Jumlah Karakter Hasil: 0", key='-OUTPUT_CHAR_COUNT-', size=(40, 1))] 
-]
-
-window = sg.Window('Text Translator AI', layout, resizable=True)
-
-# --- LOOP UTAMA APLIKASI ---
-while True:
-    event, values = window.read()
+def main(page: ft.Page):
+    # Konfigurasi halaman
+    page.title = "🤖 Text Translator AI - Modern Edition"
+    page.theme_mode = ft.ThemeMode.DARK
+    page.window_width = 700
+    page.window_height = 850
+    page.padding = ft.padding.all(20)
+    page.scroll = ft.ScrollMode.AUTO
     
-    if event == sg.WIN_CLOSED or event == "Keluar":
-        break
+    # Error dialog jika API key salah
+    if not API_CONFIGURED_SUCCESSFULLY:
+        error_dialog = ft.AlertDialog(
+            title=ft.Text("❌ Gagal Memuat Aplikasi"),
+            content=ft.Text(API_ERROR_MESSAGE),
+            actions=[ft.TextButton("OK", on_click=lambda e: page.window_close())]
+        )
+        page.dialog = error_dialog
+        error_dialog.open = True
+        page.update()
+        return
     
-    # Event untuk update penghitung karakter setiap kali ada ketikan
-    if event == '-INPUT_TEXT-':
-        char_count = len(values['-INPUT_TEXT-'])
-        window['-CHAR_COUNT-'].update(f"{char_count} / {MAX_CHARS}")
-        # Ubah warna teks menjadi merah jika melebihi batas
+    # Header
+    header = ft.Text("🤖 Text Translator AI", size=28, weight=ft.FontWeight.BOLD)
+    
+    # Input field
+    input_field = ft.TextField(
+        label="✍️ Masukkan teks yang ingin diterjemahkan...",
+        multiline=True,
+        min_lines=6,
+        max_lines=10,
+        border_color=ft.Colors.BLUE_400,
+        text_size=14,
+        helper_text="Mendukung semua bahasa → Bahasa Indonesia"
+    )
+    
+    # Character counter
+    input_char_count = ft.Text(f"0 / {MAX_CHARS:,} karakter", size=12)
+    
+    # Progress indicator
+    progress_ring = ft.Row([
+        ft.ProgressRing(width=16, height=16, stroke_width=2),
+        ft.Text("Sedang menerjemahkan...", size=12, color=ft.Colors.BLUE_400)
+    ], visible=False)
+    
+    # Translate button
+    translate_button = ft.ElevatedButton(
+        text="🚀 Terjemahkan",
+        icon=ft.icons.TRANSLATE,
+        width=200,
+        height=45,
+        style=ft.ButtonStyle(
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.BLUE_600
+        )
+    )
+    
+    # Output field
+    output_field = ft.TextField(
+        label="📖 Hasil terjemahan",
+        multiline=True,
+        min_lines=6,
+        max_lines=10,
+        read_only=True,
+        border_color=ft.Colors.GREEN_400,
+        text_size=14,
+        helper_text="Hasil akan muncul di sini"
+    )
+    
+    # Output info
+    output_char_count = ft.Text("Jumlah karakter hasil: 0", size=12, color=ft.Colors.GREEN_400)
+    
+    # Clear button
+    clear_button = ft.OutlinedButton(
+        text="🗑️ Bersihkan",
+        icon=ft.icons.CLEAR_ALL,
+        width=150,
+        height=35
+    )
+    
+    def update_input_count(e):
+        """Update character count."""
+        char_count = len(input_field.value or "")
+        input_char_count.value = f"{char_count:,} / {MAX_CHARS:,} karakter"
+        
         if char_count > MAX_CHARS:
-            window['-CHAR_COUNT-'].update(text_color='red')
+            input_char_count.color = ft.Colors.RED_400
+            translate_button.disabled = True
         else:
-            window['-CHAR_COUNT-'].update(text_color='white') # Ganti 'white' sesuai warna teks default tema Anda
-
-    # Event saat tombol "Terjemahkan" ditekan
-    if event == '-SUBMIT-':
-        source_text = values['-INPUT_TEXT-']
+            input_char_count.color = ft.Colors.GREY_400
+            translate_button.disabled = False
+        page.update()
+    
+    def start_translation(e):
+        """Start translation process."""
+        source_text = input_field.value
         
-        # Validasi input
-        if not source_text.strip():
-            sg.popup("Teks input tidak boleh kosong!", title="Peringatan")
-            continue
-
-        if len(source_text) > MAX_CHARS:
-            sg.popup(f"Teks melebihi batas maksimal {MAX_CHARS} karakter!", title="Error")
-            continue
+        if not source_text or not source_text.strip():
+            page.snack_bar = ft.SnackBar(ft.Text("⚠️ Teks input tidak boleh kosong!"))
+            page.snack_bar.open = True
+            page.update()
+            return
+        
+        # Show loading
+        progress_ring.visible = True
+        translate_button.disabled = True
+        output_field.value = ""
+        page.update()
+        
+        # Translate
+        translation_result = translate_text(source_text)
+        
+        # Hide loading
+        progress_ring.visible = False
+        translate_button.disabled = False
+        
+        # Show result
+        output_field.value = translation_result
+        result_length = len(translation_result)
+        
+        if translation_result.startswith("Error:") or translation_result.startswith("Terjadi"):
+            output_char_count.color = ft.Colors.RED_400
+            output_char_count.value = "❌ Terjadi kesalahan"
+        else:
+            output_char_count.color = ft.Colors.GREEN_400
+            output_char_count.value = f"Jumlah karakter hasil: {result_length:,}"
             
-        # Tampilkan status "memproses" dan reset penghitung output
-        window['-OUTPUT-'].update("Loading...")
-        window['-OUTPUT_CHAR_COUNT-'].update("Jumlah Karakter Hasil: 0") # Reset penghitung
-        window.refresh() # Paksa jendela untuk update tampilan
-        
-        # Panggil fungsi terjemahan
-        translation = translate_text(source_text)
-        
-        # Tampilkan hasil terjemahan
-        window['-OUTPUT-'].update(translation)
-        
-        # Update penghitung karakter hasil terjemahan jika tidak ada error
-        if not translation.startswith("Error:") and not translation.startswith("Terjadi kesalahan"):
-             output_char_count = len(translation)
-             window['-OUTPUT_CHAR_COUNT-'].update(f"Jumlah Karakter Hasil: {output_char_count}")
+        page.update()
+    
+    def clear_all(e):
+        """Clear all fields."""
+        input_field.value = ""
+        output_field.value = ""
+        input_char_count.value = f"0 / {MAX_CHARS:,} karakter"
+        input_char_count.color = ft.Colors.GREY_400
+        output_char_count.value = "Jumlah karakter hasil: 0"
+        output_char_count.color = ft.Colors.GREEN_400
+        translate_button.disabled = False
+        page.update()
+    
+    # Connect events
+    input_field.on_change = update_input_count
+    translate_button.on_click = start_translation
+    clear_button.on_click = clear_all
+    
+    # Add components to page
+    page.add(
+        header,
+        ft.Divider(),
+        input_field,
+        input_char_count,
+        ft.Row([translate_button, progress_ring], alignment=ft.MainAxisAlignment.CENTER),
+        ft.Divider(),
+        output_field,
+        output_char_count,
+        clear_button
+    )
 
-window.close()
+if __name__ == "__main__":
+    ft.app(target=main)
