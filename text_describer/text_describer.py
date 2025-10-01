@@ -1,9 +1,32 @@
+import os
+
+# Reduce noisy gRPC/ALTS logs when running outside GCP
+os.environ.setdefault("GRPC_VERBOSITY", "ERROR")
+os.environ.setdefault("GRPC_TRACE", "")
+os.environ.setdefault("RUNNING_ON_GCP", "false")
+
 import flet as ft
 import google.generativeai as genai
 import textwrap
 
 # --- KONFIGURASI PENTING ---
-API_KEY = "AIzaSyDbB8HqNcMPgNv2Jgg8jGCLpKRzJa4e3rs"  # API Key Gemini
+# Baca API Key dari file API-KEY.txt
+def read_api_key():
+    api_key_path = os.path.join(os.path.dirname(__file__), "..", "API-KEY.txt")
+    try:
+        with open(api_key_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            # Ambil baris yang mengandung API Key
+            for line in content.split("\n"):
+                if "API Key:" in line:
+                    return line.split("API Key:")[-1].strip()
+            # Jika tidak ada format "API Key:", ambil baris terakhir yang tidak kosong
+            lines = [l.strip() for l in content.split("\n") if l.strip()]
+            return lines[-1] if lines else ""
+    except Exception as e:
+        return ""
+
+API_KEY = read_api_key()
 MAX_CHARS = 100000
 MODEL_NAME = "gemini-2.5-flash"
 

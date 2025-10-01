@@ -74,4 +74,3 @@ poetry.lock
 # mypy
 .mypy_cache/
 cython_debug/
-API-KEY.txt

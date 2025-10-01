@@ -5,10 +5,26 @@ import flet as ft
 import google.generativeai as genai
 
 # --- KONFIGURASI PENTING ---
-API_KEY = "AIzaSyB4yOXYhsx43pAI0HCu5DKNt4VTZijLt7E"  # set your API key or leave empty to error-check
+# Baca API Key dari file API-KEY.txt
+def read_api_key():
+    api_key_path = os.path.join(os.path.dirname(__file__), "..", "API-KEY.txt")
+    try:
+        with open(api_key_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            # Ambil baris yang mengandung API Key
+            for line in content.split("\n"):
+                if "API Key:" in line:
+                    return line.split("API Key:")[-1].strip()
+            # Jika tidak ada format "API Key:", ambil baris terakhir yang tidak kosong
+            lines = [l.strip() for l in content.split("\n") if l.strip()]
+            return lines[-1] if lines else ""
+    except Exception as e:
+        return ""
+
+API_KEY = read_api_key()
 MODEL_NAME = "gemini-2.5-flash"
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-
+    
 # Configure API
 try:
     genai.configure(api_key=API_KEY)
