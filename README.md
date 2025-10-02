@@ -1,19 +1,8 @@
+**🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
+
+---
+
 # 🚀 Koleksi Proyek Python 🚀
-
-**🌐 Languages:** [🇮🇩 Bahasa Indo## 📝 Text Describer - Penerjemah Teks AI Modern
-
-Aplikasi penerjemah teks modern yang menggunakan **Google Generative AI (Gemini)** dengan interface **Flet** yang elegan untuk menerjemahkan teks dari berbagai bahasa ke Bahasa Indonesia dengan hasil yang natural.
-
-**Fitur Utama:**
--   🎨 **Modern UI** dengan dark theme elegan dan responsive design
--   🚀 **AI Canggih** menggunakan model Gemini 2.5-flash terbaru
--   📊 **Real-time Statistics** dengan monitoring input/output
--   ✅ **Smart Validation** dengan visual feedback
--   🔔 **Modern Notifications** dengan snackbar yang tidak mengganggu
--   ⚡ **Fast Performance** dengan smooth animations
--   🧹 **Clear Function** untuk workflow yang efficient
-
-> ➡️ **[Baca dokumentasi lengkap Text Describer](text_describer/README.md)**asa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
 
 ---
 

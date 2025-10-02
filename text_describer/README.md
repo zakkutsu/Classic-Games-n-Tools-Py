@@ -1,6 +1,8 @@
-# 🤖 Text Describer - Penerjemah Teks AI Modern
-
 **🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
+
+---
+
+# 🤖 Text Describer - Penerjemah Teks AI Modern
 
 ---
 

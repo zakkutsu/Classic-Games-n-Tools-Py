@@ -1,6 +1,8 @@
-# 🟡 Pac-Man Klasik
-
 **🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
+
+---
+
+# 🟡 Pac-Man Klasik
 
 ---
 

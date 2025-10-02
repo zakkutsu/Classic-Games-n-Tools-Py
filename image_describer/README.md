@@ -1,6 +1,8 @@
-# 🖼️ Image Describer - Analisis Gambar AI Modern
-
 **🌐 Languages:** [🇮🇩 Bahasa Indonesia](#bahasa-indonesia) | [🇺🇸 English](#english) | [🇯🇵 日本語](#日本語)
+
+---
+
+# 🖼️ Image Describer - Analisis Gambar AI Modern
 
 ---
 
