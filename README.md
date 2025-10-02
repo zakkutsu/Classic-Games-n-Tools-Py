@@ -23,7 +23,7 @@ git clone https://github.com/zakkutsu/classic-games-n-tools-py.git
 
 ### **Langkah 2: Masuk ke Folder Project**
 ```bash
-cd belajar-python
+cd classic-games-n-tools-py
 ```
 
 ### **Langkah 3: Pilih Tool/Game yang Ingin Dicoba**
@@ -165,7 +165,7 @@ git clone https://github.com/zakkutsu/classic-games-n-tools-py.git
 
 ### **Step 2: Enter Project Folder**
 ```bash
-cd belajar-python
+cd classic-games-n-tools-py
 ```
 
 ### **Step 3: Choose Tool/Game to Try**
@@ -296,7 +296,7 @@ git clone https://github.com/zakkutsu/classic-games-n-tools-py.git
 
 ### **ステップ2: プロジェクトフォルダに入る**
 ```bash
-cd belajar-python
+cd classic-games-n-tools-py
 ```
 
 ### **ステップ3: 試したいツール/ゲームを選択**
